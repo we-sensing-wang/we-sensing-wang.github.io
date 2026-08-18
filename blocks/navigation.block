@@ -1,0 +1,24 @@
+<nav aria-label="Site navigation">
+  <ul>
+    {.repeated section items}
+      <li class="{.section active}is-active{.end}{.section folder} has-submenu{.end}">
+        {.section collection}
+          <a href="{fullUrl}"{.section active} aria-current="page"{.end}>{navigationTitle}</a>
+        {.or}
+          {.section externalLink}
+            <a href="{url}"{.section newWindow} target="_blank" rel="noopener"{.end}>{title}</a>
+          {.or}
+            <span>{title}</span>
+          {.end}
+        {.end}
+        {.section folder}
+          <ul>
+            {.repeated section items}
+              <li><a href="{fullUrl}"{.section active} aria-current="page"{.end}>{navigationTitle}</a></li>
+            {.end}
+          </ul>
+        {.end}
+      </li>
+    {.end}
+  </ul>
+</nav>

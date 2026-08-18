@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-site-root="/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {squarespace-headers}
+  <link rel="icon" data-site-favicon href="/assets/logos/WE-Sensing.png?v=20260802" type="image/png">
+  <link rel="shortcut icon" data-site-favicon href="/assets/logos/WE-Sensing.png?v=20260802" type="image/png">
+  <script>
+    if (/^\/eva\/?$/.test(window.location.pathname)) {
+      document.querySelectorAll('link[data-site-favicon]').forEach(function (icon) {
+        icon.href = '/assets/logos/EVA.png?v=20260802';
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/page-extensions.css">
+  <squarespace:script data-preserve-html-node="true" src="team-data.js" combo="true" />
+  <squarespace:script data-preserve-html-node="true" src="team-renderer.js" combo="true" />
+  <squarespace:script data-preserve-html-node="true" src="eva-content.js" combo="true" />
+  <squarespace:script data-preserve-html-node="true" src="eva-page.js" combo="true" />
+  <squarespace:script data-preserve-html-node="true" src="site.js" combo="true" />
+</head>
+<body class="{squarespace.page-classes}" id="{squarespace.page-id}">
+  <a class="sq-skip-link" href="#page">Skip to content</a>
+  <header class="sq-site-header" data-content-field="site-title">
+    <div class="sq-nav-shell">
+      <a class="sq-brand" href="/" aria-label="WE-Sensing home">
+        <img class="sq-brand-logo" src="/assets/logos/WE-Sensing.png" alt="">
+        <span class="sq-screen-reader-only">{website.siteTitle}</span>
+      </a>
+      <button class="sq-nav-toggle" type="button" aria-expanded="false" aria-controls="sq-primary-navigation">
+        <span class="sq-screen-reader-only">Open navigation</span><i></i><i></i>
+      </button>
+      <div id="sq-primary-navigation" class="sq-primary-navigation" data-content-field="navigation-mainNav">
+        <squarespace:navigation navigationId="mainNav" template="navigation" />
+      </div>
+    </div>
+  </header>
+
+  <main id="page" class="sq-main-content" role="main" data-content-field="main-content">
+    {squarespace.main-content}
+  </main>
+
+  <section class="sq-contact-blocks" aria-label="Contact">
+    <div class="sq-contact-intro">
+      <p class="sq-kicker">Start a conversation</p>
+      <h2>Tell us what you need to measure.</h2>
+      <p>Choose the inquiry type that best fits your work and share the measurement context. Please do not include personal medical information.</p>
+    </div>
+    <div class="sq-form-region">
+      <squarespace:block-field id="contactFormBlocks" label="Contact Form" columns="12" />
+    </div>
+  </section>
+
+  <footer class="sq-site-footer">
+    <div>
+      <a class="sq-brand" href="/">{website.siteTitle}</a>
+      <p>Make invisible chemistry measurable.</p>
+    </div>
+    <div data-content-field="navigation-footerNav">
+      <squarespace:navigation navigationId="footerNav" template="navigation" />
+    </div>
+    <div class="sq-footer-blocks">
+      <squarespace:block-field id="footerBlocks" label="Footer Content" columns="12" />
+    </div>
+  </footer>
+  {squarespace-footers}
+</body>
+</html>
