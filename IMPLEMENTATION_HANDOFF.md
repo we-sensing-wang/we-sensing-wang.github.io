@@ -34,7 +34,7 @@ WE-Sensing (parent sensing technology company)
 ```
 
 - Do not combine water sensing and EVA in the homepage hero.
-- Preserve the corporate tagline: **“Make invisible chemistry measurable.”**
+- Preserve the corporate tagline: **“See What Cannot Be Seen.”**
 - EVA is under development and is not presented as a clinically available product.
 - The exact EVA disclaimer must remain visible on the EVA page:
 

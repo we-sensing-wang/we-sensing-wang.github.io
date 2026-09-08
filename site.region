@@ -55,7 +55,7 @@
   <footer class="sq-site-footer">
     <div>
       <a class="sq-brand" href="/">{website.siteTitle}</a>
-      <p>Make invisible chemistry measurable.</p>
+      <p>See What Cannot Be Seen.</p>
     </div>
     <div data-content-field="navigation-footerNav">
       <squarespace:navigation navigationId="footerNav" template="navigation" />
