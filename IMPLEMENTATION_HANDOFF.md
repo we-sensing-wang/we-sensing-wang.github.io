@@ -1,7 +1,7 @@
 # WE-Sensing website — implementation handoff
 
 **As-built snapshot:** 2026-08-18  
-**Repository:** `wesensing/we-sensing.com`  
+**Repository:** `we-sensing-wang/we-sensing-wang.github.io` (live since October 2026; originally `wesensing/we-sensing.com`, now deprecated)\
 **Current checkout:** `codex/premium-redesign` at `9546e07`  
 **Working-tree state at handoff:** clean
 
@@ -121,7 +121,9 @@ Then use `/`, `/eva/`, and `/company/`. The `data-local-page` attributes in stat
 
 ### Current deployment context
 
-The repository audit found that the original live surface was static/GitHub Pages-style and that `main` was live at that time. The current remote is `git@github-personal:wesensing/we-sensing.com.git`. Do **not** assume the current feature branch is published. Before any release, verify the live branch and whether the static host, Squarespace Developer Mode, or both are public.
+**Updated October 2026:** the live site is served by GitHub Pages from `we-sensing-wang/we-sensing-wang.github.io` (`main`, root folder) with the custom domain `we-sensing.com` and HTTPS enforced. Squarespace hosts only the DNS: apex A records to GitHub Pages and a `www` CNAME to `we-sensing-wang.github.io`. The previous repository, `wesensing/we-sensing.com`, released the domain (its `CNAME` file was removed) and carries a deprecation notice. A push to `main` here publishes the site.
+
+Historical note: the original audit found the live surface was the `main` branch of `wesensing/we-sensing.com`.
 
 `CNAME` is a production-sensitive domain file and must remain in place.
 

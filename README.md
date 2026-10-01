@@ -66,7 +66,13 @@ No separate Water or Technology route was introduced; existing homepage anchors 
 
 The repository originally exposed a static GitHub Pages surface and did not include a visible Squarespace Developer Platform template. It now contains both the static routes above and a compatible Squarespace 7.0 Developer Mode wrapper.
 
-`main` tracked `origin/main` at audit time, and a push or merge to the live branch may change the public site. Confirm the actual branch configured in GitHub Pages and in the Squarespace admin before publishing. Routine design work must remain on a reviewed feature branch.
+**Live site:** since October 2026, https://we-sensing.com/ is served by GitHub Pages from this repository, `we-sensing-wang/we-sensing-wang.github.io`, branch `main`, folder `/` (Deploy from a branch). A push to `main` publishes within a minute or two.
+
+- The custom domain is set in **Settings → Pages → Custom domain** (owner account `we-sensing-wang`) and mirrored by the `CNAME` file. HTTPS is enforced.
+- DNS lives in Squarespace: the apex `we-sensing.com` has A records to GitHub Pages (`185.199.108.153`, `.109`, `.110`, `.111`), and `www` is a CNAME to `we-sensing-wang.github.io` (GitHub redirects `www` to the apex).
+- The previous repository, `wesensing/we-sensing.com`, is deprecated. It no longer claims the domain; do not re-add a `CNAME` there, because GitHub serves a custom domain from whichever repository claims it.
+
+Routine design work should stay on a feature branch until it is ready to publish.
 
 The Squarespace template entry points are `template.conf` and `site.region`. The latter preserves:
 
