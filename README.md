@@ -70,7 +70,7 @@ The repository originally exposed a static GitHub Pages surface and did not incl
 
 - The custom domain is set in **Settings → Pages → Custom domain** (owner account `we-sensing-wang`) and mirrored by the `CNAME` file. HTTPS is enforced.
 - DNS lives in Squarespace: the apex `we-sensing.com` has A records to GitHub Pages (`185.199.108.153`, `.109`, `.110`, `.111`), and `www` is a CNAME to `we-sensing-wang.github.io` (GitHub redirects `www` to the apex).
-- The previous repository, `wesensing/we-sensing.com`, is deprecated. It no longer claims the domain; do not re-add a `CNAME` there, because GitHub serves a custom domain from whichever repository claims it.
+- The previous repository, `wesensing/we-sensing.com`, is deprecated. It no longer claims the domain; do not re-add a `CNAME` there, because GitHub serves a custom domain from whichever repository claims it. Sign-in access to the `wesensing` owner account was lost, so that repository cannot be archived or unpublished; instead its pages are redirect stubs that forward every old address on `wesensing.github.io/we-sensing.com/` to the same page on `we-sensing.com`. Its last published version is tagged `last-live-site`.
 
 Routine design work should stay on a feature branch until it is ready to publish.
 

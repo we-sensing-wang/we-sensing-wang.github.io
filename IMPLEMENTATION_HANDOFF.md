@@ -121,7 +121,7 @@ Then use `/`, `/eva/`, and `/company/`. The `data-local-page` attributes in stat
 
 ### Current deployment context
 
-**Updated October 2026:** the live site is served by GitHub Pages from `we-sensing-wang/we-sensing-wang.github.io` (`main`, root folder) with the custom domain `we-sensing.com` and HTTPS enforced. Squarespace hosts only the DNS: apex A records to GitHub Pages and a `www` CNAME to `we-sensing-wang.github.io`. The previous repository, `wesensing/we-sensing.com`, released the domain (its `CNAME` file was removed) and carries a deprecation notice. A push to `main` here publishes the site.
+**Updated October 2026:** the live site is served by GitHub Pages from `we-sensing-wang/we-sensing-wang.github.io` (`main`, root folder) with the custom domain `we-sensing.com` and HTTPS enforced. Squarespace hosts only the DNS: apex A records to GitHub Pages and a `www` CNAME to `we-sensing-wang.github.io`. The previous repository, `wesensing/we-sensing.com`, released the domain (its `CNAME` file was removed), carries a deprecation notice, and now serves only redirect stubs to `we-sensing.com`; its last published version is tagged `last-live-site`. The `wesensing` owner account is inaccessible, so the repository cannot be archived. A push to `main` here publishes the site.
 
 Historical note: the original audit found the live surface was the `main` branch of `wesensing/we-sensing.com`.
 
