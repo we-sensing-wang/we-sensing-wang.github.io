@@ -44,6 +44,50 @@
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
+  // The translucent header adopts the theme of the section beneath it.
+  // A one-pixel observation line at the header's midpoint keeps this cheap.
+  const themedSections = Array.from(document.querySelectorAll('[data-nav]'));
+  // Sticky bars that sit where the header sits (e.g. the EVA ribbon) follow the same theme.
+  const themeTargets = [header].concat(Array.from(document.querySelectorAll('[data-adaptive-theme]'))).filter(Boolean);
+  const sectionsUnderHeader = new Set();
+  let themeObserver = null;
+
+  function observeHeaderTheme() {
+    if (!header || !themedSections.length || !('IntersectionObserver' in window)) return;
+    if (themeObserver) themeObserver.disconnect();
+    sectionsUnderHeader.clear();
+    const middle = Math.round((header.offsetHeight || 52) / 2);
+    const below = Math.max(0, window.innerHeight - middle - 1);
+    themeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) sectionsUnderHeader.add(entry.target);
+        else sectionsUnderHeader.delete(entry.target);
+      });
+      // Nested themed areas (e.g. a dark band inside a light section) win over their parents.
+      let innermost = null;
+      sectionsUnderHeader.forEach((section) => {
+        if (!innermost || innermost.contains(section)) innermost = section;
+      });
+      if (innermost) themeTargets.forEach((target) => { target.dataset.theme = innermost.dataset.nav; });
+    }, { rootMargin: `-${middle}px 0px -${below}px 0px` });
+    themedSections.forEach((section) => themeObserver.observe(section));
+  }
+
+  observeHeaderTheme();
+  let themeResizeTimer = 0;
+  window.addEventListener('resize', () => {
+    window.clearTimeout(themeResizeTimer);
+    themeResizeTimer = window.setTimeout(observeHeaderTheme, 200);
+  });
+
+  // Children of [data-stagger] reveal one after another.
+  document.querySelectorAll('[data-stagger]').forEach((group) => {
+    Array.from(group.children).forEach((child, index) => {
+      child.classList.add('reveal');
+      child.style.setProperty('--i', String(index));
+    });
+  });
+
   const revealItems = document.querySelectorAll('.reveal');
   if (reduceMotion || !('IntersectionObserver' in window)) {
     revealItems.forEach((item) => item.classList.add('is-visible'));
@@ -66,12 +110,15 @@
   if ('IntersectionObserver' in window) {
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
-          const active = link.getAttribute('href') === `#${entry.target.id}`;
-          if (active) link.setAttribute('aria-current', 'true');
-          else link.removeAttribute('aria-current');
-        });
+        const link = navLinks.find((item) => item.getAttribute('href') === `#${entry.target.id}`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach((item) => item.removeAttribute('aria-current'));
+          link.setAttribute('aria-current', 'true');
+        } else {
+          // Clear the highlight once its section leaves, so untracked sections show no false state.
+          link.removeAttribute('aria-current');
+        }
       });
     }, { rootMargin: '-35% 0px -55% 0px' });
     sections.forEach((section) => sectionObserver.observe(section));

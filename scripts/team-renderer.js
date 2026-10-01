@@ -15,9 +15,10 @@
       var image = document.createElement('img');
       image.src = resolveSiteAsset(member.portrait);
       image.alt = member.portraitAlt;
-      image.width = 1500;
-      image.height = 1500;
+      image.width = 640;
+      image.height = 800;
       image.loading = 'lazy';
+      image.decoding = 'async';
       frame.appendChild(image);
     } else {
       frame.classList.add('team-card__portrait--placeholder');
@@ -68,6 +69,9 @@
     var section = document.createElement('section');
     section.className = 'team-group team-group--' + group.emphasis;
     section.id = group.id;
+    section.setAttribute('aria-labelledby', group.id + '-title');
+    // The advisory board sits on a dark band; the translucent header follows it.
+    if (group.emphasis === 'advisory') section.dataset.nav = 'dark';
 
     var heading = document.createElement('div');
     heading.className = 'team-group__heading';
@@ -76,6 +80,7 @@
     label.textContent = String(group.order).padStart(2, '0');
     var text = document.createElement('div');
     var title = document.createElement('h2');
+    title.id = group.id + '-title';
     title.textContent = group.title;
     var description = document.createElement('p');
     description.textContent = group.description;

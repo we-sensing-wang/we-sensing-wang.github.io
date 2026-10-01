@@ -1,18 +1,33 @@
 <article class="inner-page company-page">
-  <section class="inner-page-hero team-page-hero" aria-labelledby="sq-team-page-title">
-    <div class="page-width inner-page-hero__grid">
-      <div><p class="kicker">Company / Team</p><h1 id="sq-team-page-title">Built across disciplines.</h1></div>
-      <div class="team-page-hero__aside">
-        <p class="inner-page-hero__intro">WE-Sensing brings together scientific development, product execution, commercialization guidance, and domain expertise.</p>
-        <figure class="team-page-hero__image"><img src="/assets/team/team-at-work.webp" width="1024" height="685" alt="WE-Sensing team members examining a sensing component in a laboratory"><figcaption><span>Collaborative development</span><span>Electrochemical sensing</span></figcaption></figure>
+  <section class="inner-page-hero team-page-hero" aria-labelledby="team-page-title">
+    <div class="page-width team-page-hero__copy">
+      <p class="eyebrow">Company / Team</p>
+      <h1 id="team-page-title">Built across disciplines.</h1>
+      <p class="inner-page-hero__intro">WE-Sensing brings together scientific development, product execution, commercialization guidance, and domain expertise.</p>
+    </div>
+    <figure class="team-page-hero__image" data-expand>
+      <div class="team-page-hero__frame">
+        <img src="/assets/team/web/team-at-work-2000.webp" srcset="/assets/team/team-at-work.webp 1024w, /assets/team/web/team-at-work-2000.webp 2000w" sizes="100vw" width="2000" height="1338" alt="WE-Sensing team members examining a sensing component in a laboratory">
       </div>
-    </div>
-    <div class="page-width team-page-index" aria-label="Team groups">
-      <a href="#co-founders">Co-Founders</a><a href="#product-team">Product Team</a><a href="#business-team">Business Team</a><a href="#scientific-advisory-board">Scientific Advisory Board</a>
-    </div>
+      <figcaption class="page-width"><span>Collaborative development</span><span>Electrochemical sensing</span></figcaption>
+    </figure>
+    <nav class="page-width team-page-index" aria-label="Team groups">
+      <a href="#co-founders">Co-Founders</a>
+      <a href="#product-team">Product Team</a>
+      <a href="#business-team">Business Team</a>
+      <a href="#scientific-advisory-board">Scientific Advisory Board</a>
+    </nav>
   </section>
-  <section class="team-directory-section section-pad" aria-label="Complete WE-Sensing team"><div class="page-width team-directory" data-team-view="full"></div><noscript><p class="page-width">Enable JavaScript to view the complete team directory.</p></noscript></section>
-  <section class="company-cta section-pad" aria-labelledby="sq-company-cta-title">
-    <div class="page-width company-cta__grid"><div><p class="kicker">Work with us</p><h2 id="sq-company-cta-title">Bring us a measurement question.</h2></div><div><p>We welcome conversations about water pilots, research collaboration, technology partnerships, and EVA research.</p><a class="button button-primary" href="/#contact">Start a conversation <span aria-hidden="true">↗</span></a></div></div>
+
+  <section class="team-directory-section section" aria-label="Complete WE-Sensing team">
+    <div class="page-width team-directory" data-team-view="full"></div>
+    <noscript><p class="page-width">Enable JavaScript to view the complete team directory.</p></noscript>
+  </section>
+
+  <section class="company-cta section" aria-labelledby="company-cta-title">
+    <div class="page-width company-cta__grid">
+      <div class="reveal"><p class="eyebrow">Work with us</p><h2 id="company-cta-title">Bring us a measurement question.</h2></div>
+      <div class="reveal"><p>We welcome conversations about water pilots, research collaboration, technology partnerships, and EVA research.</p><a class="btn btn-primary" href="/#contact">Start a conversation</a></div>
+    </div>
   </section>
 </article>

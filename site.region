@@ -4,20 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {squarespace-headers}
-  <link rel="icon" data-site-favicon href="/assets/logos/WE-Sensing.png?v=20260802" type="image/png">
-  <link rel="shortcut icon" data-site-favicon href="/assets/logos/WE-Sensing.png?v=20260802" type="image/png">
+  <link rel="icon" data-site-favicon href="/assets/logos/web/we-sensing-icon-192.png?v=20261001" type="image/png">
+  <link rel="shortcut icon" data-site-favicon href="/assets/logos/web/we-sensing-icon-192.png?v=20261001" type="image/png">
+  <link rel="apple-touch-icon" data-site-touch-icon href="/assets/logos/web/we-sensing-apple-touch.png?v=20261001">
   <script>
     if (/^\/eva\/?$/.test(window.location.pathname)) {
       document.querySelectorAll('link[data-site-favicon]').forEach(function (icon) {
-        icon.href = '/assets/logos/EVA.png?v=20260802';
+        icon.href = '/assets/logos/web/eva-icon-192.png?v=20261001';
+      });
+      document.querySelectorAll('link[data-site-touch-icon]').forEach(function (icon) {
+        icon.href = '/assets/logos/web/eva-apple-touch.png?v=20261001';
       });
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/page-extensions.css">
   <squarespace:script data-preserve-html-node="true" src="team-data.js" combo="true" />
   <squarespace:script data-preserve-html-node="true" src="team-renderer.js" combo="true" />
   <squarespace:script data-preserve-html-node="true" src="eva-content.js" combo="true" />
   <squarespace:script data-preserve-html-node="true" src="eva-page.js" combo="true" />
+  <squarespace:script data-preserve-html-node="true" src="motion.js" combo="true" />
   <squarespace:script data-preserve-html-node="true" src="site.js" combo="true" />
 </head>
 <body class="{squarespace.page-classes}" id="{squarespace.page-id}">
@@ -25,7 +33,7 @@
   <header class="sq-site-header" data-content-field="site-title">
     <div class="sq-nav-shell">
       <a class="sq-brand" href="/" aria-label="WE-Sensing home">
-        <img class="sq-brand-logo" src="/assets/logos/WE-Sensing.png" alt="">
+        <img class="sq-brand-logo" src="/assets/logos/web/we-sensing.webp" width="640" height="188" alt="">
         <span class="sq-screen-reader-only">{website.siteTitle}</span>
       </a>
       <button class="sq-nav-toggle" type="button" aria-expanded="false" aria-controls="sq-primary-navigation">

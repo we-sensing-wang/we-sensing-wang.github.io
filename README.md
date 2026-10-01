@@ -1,6 +1,6 @@
 # WE-Sensing website
 
-WE-Sensing’s website presents the parent electrochemical sensing company, its primary water and wastewater work, and EVA as a distinct women’s-health venture under development. The current visual system and homepage water/technology content are intentionally preserved.
+WE-Sensing’s website presents the parent electrochemical sensing company, its primary water and wastewater work, and EVA as a distinct women’s-health venture under development. In October 2026 the visual system was redesigned in an Apple-inspired style (see [Design system](#design-system)); all copy, imagery, routes, and the contact workflow were preserved.
 
 ## Repository architecture
 
@@ -9,14 +9,15 @@ WE-Sensing’s website presents the parent electrochemical sensing company, its 
 ├── index.html                     Static homepage and current public surface
 ├── company/index.html             Static Company and complete team route
 ├── eva/index.html                 Static dedicated EVA route
-├── style.css                      Existing visual system and homepage styles
-├── assets/page-extensions.css     Additive Company, team, and EVA styles
-├── script.js                      Static navigation, reveal, and contact behavior
+├── style.css                      Design system (tokens, type, buttons, navigation) and homepage styles
+├── assets/page-extensions.css     Team cards, Company page, and EVA page styles
+├── script.js                      Static navigation, adaptive header theme, reveal, and contact behavior
 ├── scripts/
 │   ├── team-data.js               Central source for all team names and roles
 │   ├── team-renderer.js           Homepage preview and full-directory renderer
 │   ├── eva-content.js             Central EVA route, navigation, roadmap, and partnership data
-│   ├── eva-page.js                EVA local-navigation and content renderer
+│   ├── eva-page.js                EVA local navigation (active section, mobile menu) and content renderer
+│   ├── motion.js                  Hero canvas, scroll scenes, monitoring story, carousel, spotlights
 │   └── site.js                    Squarespace global behavior
 ├── template.conf                  Squarespace template configuration
 ├── site.region                    Squarespace shell and editable CMS regions
@@ -32,13 +33,24 @@ WE-Sensing’s website presents the parent electrochemical sensing company, its 
 ├── styles/site.less               Squarespace template/editor styles
 ├── assets/
 │   ├── asset-registry.json        Machine-readable asset inventory
-│   ├── eva/                       EVA social and future product assets
-│   └── team/                      Final destination for optimized team portraits
+│   ├── eva/                       EVA source renders; eva/web/ holds the optimized WebP copies the pages use
+│   ├── team/                      Team source portraits; team/web/ holds the optimized WebP copies
+│   └── logos/                     Source logos; logos/web/ holds the web logo and square favicon exports
 ├── ASSET_REPLACEMENT_GUIDE.md     Replacement specifications and instructions
 ├── REPOSITORY_AUDIT.md            Pre-redesign architecture/live-impact audit
 ├── sitemap.xml                    Static route registry
 └── CNAME                          Existing custom-domain configuration
 ```
+
+## Design system
+
+The site follows Apple’s product-page conventions: system typography, generous whitespace, translucent navigation, rounded surfaces, and motion that explains the product rather than decorating it.
+
+- **Type:** `-apple-system`/SF Pro on Apple devices with Inter (Google Fonts) elsewhere; small technical labels use the system monospace stack (SF Mono/Menlo). Display headlines are 700 weight with slight negative tracking.
+- **Color:** neutral `#1d1d1f` / `#f5f5f7` surfaces, black “stage” sections, and accents drawn from the logos — the water gradient (leaf green → aqua → blue) for WE-Sensing and a rose → berry gradient for EVA. All tokens are custom properties at the top of `style.css`.
+- **Components:** pill buttons (`.btn-*`), chevron links (`.link-more`), split and centered section headings (`.section-head`), rounded tiles, and a translucent header that switches light/dark based on the section beneath it (`data-nav` attributes).
+- **Diagrams:** the hero fluid/electrode interface (canvas), the monitoring story (`.monitor` SVG with three states), the signal pipeline (`.pipeline`), the exploded technology stack (`.stack-scene` SVG), application illustrations, and the EVA timeline and roadmap are all live HTML/SVG/canvas. They are conceptual and deliberately show no measurement values.
+- **Motion:** `scripts/motion.js` drives scroll-linked scenes with a single `requestAnimationFrame` pass, pauses the hero canvas when it is off screen or the tab is hidden, and renders static final states under `prefers-reduced-motion`. Content never depends on JavaScript to be visible: reveal effects only apply when the inline `html.js` flag is set.
 
 ## Page and route structure
 
@@ -107,14 +119,14 @@ EVA must always retain this exact statement:
 
 Use `ASSET_REPLACEMENT_GUIDE.md` and update `assets/asset-registry.json` in the same change. Both files record exact paths, content requirements, dimensions, formats, transparency, alt text, priority, and whether code must change.
 
-All EVA product diagrams are intentional HTML/CSS placeholders; the dedicated EVA Open Graph image is at `assets/eva/eva-open-graph.webp`. Missing portraits use neutral initials and a subtle silhouette, never generated faces.
+The pages reference optimized WebP copies in `assets/eva/web/`, `assets/team/web/`, and `assets/logos/web/`; the original PNG sources stay in place. When a source image is replaced, regenerate its web copy (for example `cwebp -q 84 -alpha_q 100 -resize 1200 0 source.png -o web/name.webp`) and keep the `width`/`height` attributes in the HTML accurate. The dedicated EVA Open Graph image is at `assets/eva/eva-open-graph.webp`. Missing portraits use neutral initials and a subtle silhouette, never generated faces.
 
 Squarespace template assets have a documented per-file limit; optimize final imagery before committing. Editor/CDN uploads may be preferable for large photography once the CMS connection is confirmed.
 
 ## Adding or updating a team member
 
 1. Obtain the approved display name, role, group, portrait, and permission to publish.
-2. Export the portrait to a consistent 1000 × 1200 WebP under `assets/team/`.
+2. Keep the source portrait under `assets/team/` and export a WebP copy to `assets/team/web/` (a transparent head-and-shoulders cut-out matches the current set; the card supplies the background).
 3. Add or update one member object in `scripts/team-data.js`. Do not hard-code a second copy in a page template.
 4. Use `featured: true` only for members intentionally included in the homepage preview; the current preview is limited to the three Co-Founders.
 5. Add an approved biography only when it is verified. If none is approved, omit `biography`; the layout does not require filler copy.
@@ -156,7 +168,8 @@ For Squarespace, use the existing `contactFormBlocks` field in `site.region`:
 - EVA product renders, application screens, packaging, and technical diagrams require final product/technical review. Current schematic visuals are explicitly documented and avoid fabricated data.
 - Development roadmap statuses are intentionally unassigned until project leadership approves them.
 - The EVA Open Graph image is suitable for initial review but still requires brand and product-accuracy approval.
-- An approved parent-company mark and complete favicon package remain outstanding.
+- Square favicons (`assets/logos/web/*-icon-*.png`, `*-apple-touch.png`) are cropped from the existing logo emblems; a designer-made favicon package is still recommended.
+- The Open Graph image `assets/og/we-sensing-social.jpg` still shows the previous tagline “Make invisible chemistry measurable.”
 - Partner logos must not be added without permission and verified relationship wording.
 
 ## Files and functionality that must not be removed
@@ -169,6 +182,7 @@ For Squarespace, use the existing `contactFormBlocks` field in `site.region`:
 - `pages/*.page`, `pages/*.page.conf`, and their corresponding blocks while those routes are in use
 - `scripts/team-data.js` and `scripts/team-renderer.js`
 - `scripts/eva-content.js` and `scripts/eva-page.js`
+- `scripts/motion.js` and the optimized image folders `assets/eva/web/`, `assets/team/web/`, and `assets/logos/web/`
 - JSON-T system variables, navigation tags, `data-content-field` annotations, and block fields in `site.region`
 - existing image files until replacements are approved and every reference is migrated
 - `assets/asset-registry.json` and `ASSET_REPLACEMENT_GUIDE.md`

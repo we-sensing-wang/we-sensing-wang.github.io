@@ -2,9 +2,9 @@
 <html lang="en" data-site-root="..">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Meet the co-founders, product contributors, business mentors, and scientific advisors supporting WE-Sensing.">
-  <meta name="theme-color" content="#F6FAFA">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:title" content="Company and Team | WE-Sensing">
   <meta property="og:description" content="Meet the multidisciplinary team supporting WE-Sensing and EVA.">
   <meta property="og:type" content="website">
@@ -13,24 +13,27 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://we-sensing.com/company">
   <title>Company and Team | WE-Sensing</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
-  <link rel="icon" href="../assets/logos/WE-Sensing.png?v=20260802" type="image/png">
-  <link rel="shortcut icon" href="../assets/logos/WE-Sensing.png?v=20260802" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logos/web/we-sensing-icon-32.png?v=20261001" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/logos/web/we-sensing-icon-192.png?v=20261001" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/logos/web/we-sensing-apple-touch.png?v=20261001">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../assets/page-extensions.css">
   <script src="../scripts/team-data.js" defer></script>
   <script src="../scripts/team-renderer.js" defer></script>
   <script src="../script.js" defer></script>
+  <script src="../scripts/motion.js" defer></script>
 </head>
 <body class="inner-page company-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header is-light" id="site-header">
+  <header class="site-header" id="site-header" data-theme="light">
     <div class="nav-shell">
       <a class="brand" href="../" data-local-page="../index.html" aria-label="WE-Sensing home">
-        <img class="brand-logo" src="../assets/logos/WE-Sensing.png" alt="">
+        <img class="brand-logo" src="../assets/logos/web/we-sensing.webp" width="640" height="188" alt="">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="sr-only">Open navigation</span><span></span><span></span></button>
       <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
@@ -38,51 +41,51 @@
         <a href="../#technology" data-local-page="../index.html#technology">Technology</a>
         <a href="../eva/" data-local-page="../eva/index.html">EVA</a>
         <a href="./" data-local-page="index.html" aria-current="page">Company</a>
-        <a class="nav-contact" href="../#contact" data-local-page="../index.html#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact" href="../#contact" data-local-page="../index.html#contact">Start a conversation</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="inner-page-hero team-page-hero" aria-labelledby="team-page-title">
-      <div class="page-width inner-page-hero__grid">
-        <div class="reveal">
-          <p class="kicker">Company / Team</p>
-          <h1 id="team-page-title">Built across disciplines.</h1>
-        </div>
-        <div class="team-page-hero__aside reveal">
-          <p class="inner-page-hero__intro">WE-Sensing brings together scientific development, product execution, commercialization guidance, and domain expertise.</p>
-          <figure class="team-page-hero__image">
-            <img src="../assets/team/team-at-work.webp" width="1024" height="685" alt="WE-Sensing team members examining a sensing component in a laboratory">
-            <figcaption><span>Collaborative development</span><span>Electrochemical sensing</span></figcaption>
-          </figure>
-        </div>
+    <section class="inner-page-hero team-page-hero" aria-labelledby="team-page-title" data-nav="light">
+      <div class="page-width team-page-hero__copy">
+        <p class="eyebrow">Company / Team</p>
+        <h1 id="team-page-title">Built across disciplines.</h1>
+        <p class="inner-page-hero__intro">WE-Sensing brings together scientific development, product execution, commercialization guidance, and domain expertise.</p>
       </div>
-      <div class="page-width team-page-index" aria-label="Team groups">
+      <figure class="team-page-hero__image" data-expand>
+        <div class="team-page-hero__frame">
+          <img src="../assets/team/web/team-at-work-2000.webp" srcset="../assets/team/team-at-work.webp 1024w, ../assets/team/web/team-at-work-2000.webp 2000w" sizes="100vw" width="2000" height="1338" alt="WE-Sensing team members examining a sensing component in a laboratory" fetchpriority="high">
+        </div>
+        <figcaption class="page-width"><span>Collaborative development</span><span>Electrochemical sensing</span></figcaption>
+      </figure>
+      <nav class="page-width team-page-index" aria-label="Team groups">
         <a href="#co-founders">Co-Founders</a>
         <a href="#product-team">Product Team</a>
         <a href="#business-team">Business Team</a>
         <a href="#scientific-advisory-board">Scientific Advisory Board</a>
-      </div>
+      </nav>
     </section>
 
-    <section class="team-directory-section section-pad" aria-label="Complete WE-Sensing team">
+    <section class="team-directory-section section" aria-label="Complete WE-Sensing team" data-nav="light">
       <div class="page-width team-directory" data-team-view="full"></div>
       <noscript><p class="page-width">Enable JavaScript to view the complete team directory.</p></noscript>
     </section>
 
-    <section class="company-cta section-pad" aria-labelledby="company-cta-title">
+    <section class="company-cta section" aria-labelledby="company-cta-title" data-nav="light">
       <div class="page-width company-cta__grid">
-        <div><p class="kicker">Work with us</p><h2 id="company-cta-title">Bring us a measurement question.</h2></div>
-        <div><p>We welcome conversations about water pilots, research collaboration, technology partnerships, and EVA research.</p><a class="button button-primary" href="../#contact" data-local-page="../index.html#contact">Start a conversation <span aria-hidden="true">↗</span></a></div>
+        <div class="reveal"><p class="eyebrow">Work with us</p><h2 id="company-cta-title">Bring us a measurement question.</h2></div>
+        <div class="reveal"><p>We welcome conversations about water pilots, research collaboration, technology partnerships, and EVA research.</p><a class="btn btn-primary" href="../#contact" data-local-page="../index.html#contact">Start a conversation</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-nav="light">
     <div class="page-width footer-top">
-      <a class="brand footer-brand" href="../" data-local-page="../index.html" aria-label="WE-Sensing home"><img class="brand-logo" src="../assets/logos/WE-Sensing.png" alt=""></a>
-      <p>See What Cannot Be Seen.</p>
+      <div class="footer-brand-block">
+        <a class="brand footer-brand" href="../" data-local-page="../index.html" aria-label="WE-Sensing home"><img class="brand-logo" src="../assets/logos/web/we-sensing.webp" width="640" height="188" alt="" loading="lazy"></a>
+        <p class="footer-slogan">See What Cannot Be Seen.</p>
+      </div>
       <nav aria-label="Footer navigation"><a href="../#water" data-local-page="../index.html#water">Water sensing</a><a href="../#technology" data-local-page="../index.html#technology">Technology</a><a href="../eva/" data-local-page="../eva/index.html">EVA</a><a href="./" data-local-page="index.html" aria-current="page">Company</a><a href="../#contact" data-local-page="../index.html#contact">Contact</a></nav>
     </div>
     <div class="page-width footer-bottom"><span>© <span id="current-year">2026</span> WE-Sensing</span><span>Electrochemical sensing systems</span><a href="#main-content">Back to top ↑</a></div>

@@ -1,64 +1,220 @@
 <article class="eva-page eva-squarespace-page">
-  <section class="eva-page-hero" id="overview" aria-labelledby="sq-eva-title">
-    <div class="eva-page-orbit" aria-hidden="true"></div>
-    <div class="page-width eva-page-hero__grid">
-      <div class="eva-page-hero__copy">
-        <p class="kicker">EVA / A WE-Sensing venture</p>
-        <h1 id="sq-eva-title">A familiar pad. A new layer of health insight.</h1>
-        <p>EVA is a smart menstrual sensing pad under development, designed to measure selected biological changes in menstrual fluid through a product women already use.</p>
-        <div class="hero-actions"><a class="button button-eva" href="#how-it-works">See How EVA Works <span aria-hidden="true">→</span></a><a class="eva-text-link" href="#partnerships">Explore Partnerships <span aria-hidden="true">↗</span></a></div>
+  <nav class="eva-local-nav" aria-label="EVA page sections" data-eva-local-nav>
+    <div class="page-width eva-local-nav__inner">
+      <a class="eva-local-nav__title" href="#overview">EVA</a>
+      <button class="eva-local-nav__toggle" type="button" aria-expanded="false" aria-controls="eva-local-links"><span class="sr-only">Show EVA page sections</span></button>
+      <div class="eva-local-nav__links" id="eva-local-links" data-eva-local-navigation></div>
+      <a class="eva-local-nav__cta" href="#partnerships">Explore Partnerships</a>
+    </div>
+  </nav>
+
+  <section class="eva-page-hero" id="overview" aria-labelledby="eva-page-title">
+    <div class="eva-page-hero__glow" aria-hidden="true"><i></i><i></i></div>
+    <div class="page-width eva-page-hero__copy">
+      <p class="eyebrow">EVA / A WE-Sensing venture</p>
+      <h1 id="eva-page-title">A familiar pad. <span class="eva-gradient-text">A new layer of health insight.</span></h1>
+      <p class="eva-page-hero__intro">EVA is a smart menstrual sensing pad under development, designed to measure selected biological changes in menstrual fluid through a product women already use.</p>
+      <div class="hero-actions">
+        <a class="btn btn-eva" href="#how-it-works">See How EVA Works</a>
+        <a class="link-more link-more--eva" href="#partnerships">Explore Partnerships</a>
       </div>
-      <figure class="eva-product-stage eva-product-stage--render">
-        <div class="eva-product-stage__label"><span>PRODUCT SYSTEM</span><span>CONCEPT VIEW</span></div>
+    </div>
+
+    <figure class="eva-product-stage" data-expand>
+      <div class="eva-product-stage__frame">
         <img src="/assets/eva/eva-hero-product.webp" width="1823" height="863" alt="Concept render of the EVA smart sensing pad, detachable reusable reader, and application">
+        <div class="eva-product-stage__label"><span>Product system</span><span>Concept view</span></div>
         <figcaption class="eva-product-stage__legend"><span><i></i>Sensing pad</span><span><i></i>Reusable electronics</span><span><i></i>Longitudinal view</span></figcaption>
-      </figure>
+      </div>
+    </figure>
+
+    <div class="eva-hero-disclaimer">
+      <span>Development status</span>
+      <p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p>
     </div>
-    <div class="page-width eva-hero-disclaimer"><span>Development status</span><p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p></div>
   </section>
 
-  <nav class="eva-local-nav" aria-label="EVA page sections"><div class="page-width" data-eva-local-navigation></div></nav>
-
-  <section class="eva-need section-pad" id="need" aria-labelledby="sq-eva-need-title">
+  <section class="eva-need section" id="need" aria-labelledby="eva-need-title">
     <div class="page-width">
-      <div class="section-heading split-heading"><div><p class="kicker">The need</p><h2 id="sq-eva-need-title">Important biological changes remain invisible between clinical visits.</h2></div><p>Wearable devices can reveal patterns in behavior and physiology, while clinical tests provide detailed information at individual moments. EVA is being developed to help capture selected biological changes during the time between those measurements.</p></div>
-      <div class="eva-timeline" role="img" aria-label="Timeline showing EVA measurements between two clinical visits"><div class="eva-timeline__labels"><span>Clinical visit</span><span>Time between visits</span><span>Clinical visit</span></div><div class="eva-timeline__track"><i class="visit-node"></i><span><i></i><i></i><i></i><i></i><i></i></span><i class="visit-node"></i></div><div class="eva-timeline__caption"><span>Detailed measurement</span><strong>EVA longitudinal measurements</strong><span>Detailed measurement</span></div></div>
-      <div class="eva-context-grid"><article><span>01</span><h3>Consumer wearables</h3><p>Can help reveal behavioral and physiological patterns through indirect signals.</p></article><article><span>02</span><h3>Clinical testing</h3><p>Provides detailed information at individual moments under clinical direction.</p></article><article><span>03</span><h3>EVA’s intended role</h3><p>Explore longitudinal biological information between visits without replacing either approach.</p></article></div>
-    </div>
-  </section>
+      <div class="section-head split reveal">
+        <div><p class="eyebrow">The need</p><h2 id="eva-need-title">Important biological changes remain invisible between clinical visits.</h2></div>
+        <p class="section-lead">Wearable devices can reveal patterns in behavior and physiology, while clinical tests provide detailed information at individual moments. EVA is being developed to help capture selected biological changes during the time between those measurements.</p>
+      </div>
 
-  <section class="eva-product-design section-pad" id="product-design" aria-labelledby="sq-eva-product-title">
-    <div class="page-width"><div class="section-heading split-heading"><div><p class="kicker">Product design</p><h2 id="sq-eva-product-title">Designed around a product women already know.</h2></div><p>The EVA concept combines a disposable sensing pad, a detachable reader, and an application intended to organize measurements over time.</p></div><div class="eva-component-intro"><article><span>01</span><h3>Smart Sensing Pad</h3><p>A familiar disposable pad containing an integrated sensing region.</p></article><article><span>02</span><h3>Reusable Reader</h3><p>A detachable electronic device that captures and transfers sensor signals.</p></article><article><span>03</span><h3>EVA Application</h3><p>A secure interface intended to organize measurements and present longitudinal trends.</p></article></div>
-      <div class="eva-product-gallery">
-        <article class="eva-gallery-card eva-gallery-card--front"><div class="eva-gallery-card__meta"><span>01</span><h3>Pad front view</h3></div><img class="eva-gallery-image eva-gallery-image--pad" src="/assets/eva/eva-pad.png" alt="Front view of the EVA sensing pad"></article>
-        <article class="eva-gallery-card eva-gallery-card--back"><div class="eva-gallery-card__meta"><span>02</span><h3>Pad rear view</h3></div><img class="eva-gallery-image eva-gallery-image--pad" src="/assets/eva/eva-pad-back.png" alt="Rear view of the EVA sensing pad"></article>
-        <article class="eva-gallery-card eva-gallery-card--exploded"><div class="eva-gallery-card__meta"><span>03</span><h3>Exploded layer view</h3></div><img class="eva-gallery-image eva-gallery-image--layer" src="/assets/eva/sensing-layer.png" alt="EVA sensing-layer architecture"></article>
-        <article class="eva-gallery-card eva-gallery-card--reader"><div class="eva-gallery-card__meta"><span>04</span><h3>Detachable reader</h3></div><img class="eva-gallery-image" src="/assets/eva/logger-detach.png" alt="Detachable EVA reader"></article>
-        <article class="eva-gallery-card eva-gallery-card--kit"><div class="eva-gallery-card__meta"><span>05</span><h3>Starter kit</h3></div><img class="eva-gallery-image" src="/assets/eva/starterkit.png" alt="EVA starter kit"></article>
-        <article class="eva-gallery-card eva-gallery-card--app"><div class="eva-gallery-card__meta"><span>06</span><h3>Application interface</h3></div><img class="eva-gallery-image eva-gallery-image--application" src="/assets/eva/application.png" alt="EVA application interface"></article>
+      <div class="eva-timeline reveal" role="img" aria-label="Timeline showing EVA measurements between two clinical visits">
+        <div class="eva-timeline__labels"><span>Clinical visit</span><span>Time between visits</span><span>Clinical visit</span></div>
+        <div class="eva-timeline__chart">
+          <svg class="eva-timeline__svg" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="evaCurve" x1="0" x2="1"><stop offset="0" stop-color="#e5677f"/><stop offset=".55" stop-color="#c94a6e"/><stop offset="1" stop-color="#9c3f78"/></linearGradient>
+              <linearGradient id="evaArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e97786" stop-opacity=".24"/><stop offset="1" stop-color="#e97786" stop-opacity="0"/></linearGradient>
+            </defs>
+            <path class="eva-timeline__base" d="M0 176H1000"/>
+            <path d="M60 176C125 176 125 118 190 118C245 118 245 92 300 92C355 92 355 124 410 124C465 124 465 78 520 78C575 78 575 104 630 104C685 104 685 70 740 70C795 70 795 96 850 96C895 96 895 176 940 176Z" fill="url(#evaArea)"/>
+            <path class="eva-timeline__curve" stroke="url(#evaCurve)" d="M60 176C125 176 125 118 190 118C245 118 245 92 300 92C355 92 355 124 410 124C465 124 465 78 520 78C575 78 575 104 630 104C685 104 685 70 740 70C795 70 795 96 850 96C895 96 895 176 940 176"/>
+          </svg>
+          <i class="visit-node" style="--x:6%" aria-hidden="true"></i>
+          <i class="visit-node" style="--x:94%" aria-hidden="true"></i>
+          <span class="eva-timeline__points" aria-hidden="true">
+            <i style="--x:19%;--y:53.6%;--i:0"></i><i style="--x:30%;--y:41.8%;--i:1"></i><i style="--x:41%;--y:56.4%;--i:2"></i><i style="--x:52%;--y:35.5%;--i:3"></i><i style="--x:63%;--y:47.3%;--i:4"></i><i style="--x:74%;--y:31.8%;--i:5"></i><i style="--x:85%;--y:43.6%;--i:6"></i>
+          </span>
+        </div>
+        <div class="eva-timeline__caption"><span>Detailed measurement</span><strong>EVA longitudinal measurements</strong><span>Detailed measurement</span></div>
+      </div>
+
+      <div class="eva-context-grid" data-stagger>
+        <article class="eva-tile">
+          <svg class="eva-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="13" width="20" height="22" rx="6"/><path d="M18.5 13l1.2-6h8.6l1.2 6M18.5 35l1.2 6h8.6l1.2-6M17.5 24.5h3.2l2-4.2 3 8.4 2-4.2h2.8"/></svg>
+          <span>01</span><h3>Consumer wearables</h3><p>Can help reveal behavioral and physiological patterns through indirect signals.</p>
+        </article>
+        <article class="eva-tile">
+          <svg class="eva-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 6h10M20.5 6v12.5L11.6 35.2A4.5 4.5 0 0 0 15.6 42h16.8a4.5 4.5 0 0 0 4-6.8L27.5 18.5V6"/><path d="M14.5 31h19"/></svg>
+          <span>02</span><h3>Clinical testing</h3><p>Provides detailed information at individual moments under clinical direction.</p>
+        </article>
+        <article class="eva-tile eva-tile--accent">
+          <svg class="eva-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 9v30M40 9v30"/><path d="M8 32c5 0 6-9 10-9s5 5 8 5 4-12 8-12 4 4 6 4"/><circle cx="18" cy="23" r="2.2"/><circle cx="26" cy="28" r="2.2"/><circle cx="34" cy="16" r="2.2"/></svg>
+          <span>03</span><h3>EVA’s intended role</h3><p>Explore longitudinal biological information between visits without replacing either approach.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="eva-how section-pad" id="how-it-works" aria-labelledby="sq-eva-how-title">
-    <div class="page-width"><div class="section-heading"><p class="kicker">How it works</p><h2 id="sq-eva-how-title">From routine use to a longitudinal view.</h2></div><ol class="eva-how-grid"><li><span>01</span><h3>Use</h3><p>The pad is worn as part of the user’s normal menstrual routine.</p></li><li><span>02</span><h3>Sense</h3><p>Integrated electrochemical sensors interact with menstrual fluid and generate electrical signals.</p></li><li><span>03</span><h3>Interpret</h3><p>The reusable reader and data-processing system organize and analyze the sensor response.</p></li><li><span>04</span><h3>Understand</h3><p>The application presents longitudinal trends intended to support future health understanding and clinical research.</p></li></ol></div>
-  </section>
-
-  <section class="eva-technology-page section-pad" id="eva-technology" aria-labelledby="sq-eva-tech-title">
-    <div class="page-width"><div class="section-heading split-heading"><div><p class="kicker">Technology</p><h2 id="sq-eva-tech-title">Advanced sensing, integrated into a familiar form.</h2></div><p>EVA extends WE-Sensing’s broader sensing platform into a women’s health application while keeping the product and user experience central to the system design.</p></div>
-      <div class="eva-tech-layout"><div class="eva-tech-architecture"><img class="eva-tech-architecture__image" src="/assets/eva/eva-concept.png" alt="EVA technology architecture from sensing interface to longitudinal interpretation"></div>
-        <div class="eva-tech-modules"><article><span>01</span><div><h3>Electrochemical Sensing Interface</h3><p>Flexible sensor elements designed to respond to selected chemical changes in menstrual fluid.</p></div></article><article><span>02</span><div><h3>Integrated Fluid Interaction</h3><p>A sensing region positioned within the pad architecture to interact with collected menstrual fluid.</p></div></article><article><span>03</span><div><h3>Reusable Electronics</h3><p>A detachable reader designed to acquire signals from the disposable sensing pad.</p></div></article><article><span>04</span><div><h3>Signal Interpretation</h3><p>Data-processing methods intended to transform complex sensor responses into longitudinal measurements and interpretable trends.</p></div></article></div>
+  <section class="eva-product-design section" id="product-design" aria-labelledby="eva-product-title">
+    <div class="page-width">
+      <div class="section-head split reveal">
+        <div><p class="eyebrow">Product design</p><h2 id="eva-product-title">Designed around a product women already know.</h2></div>
+        <p class="section-lead">The EVA concept combines a disposable sensing pad, a detachable reader, and an application intended to organize measurements over time.</p>
       </div>
-      <div class="eva-capabilities" aria-label="Related WE-Sensing expertise"><span>Electrochemical sensing</span><span>Sensor materials</span><span>Custom electronics</span><span>Signal processing</span><span>Machine learning</span><span>Scalable fabrication</span></div>
+
+      <div class="eva-component-intro" data-stagger>
+        <article>
+          <div class="eva-component-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M18 5h12a6 6 0 0 1 6 6v7l4 3v6l-4 3v7a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6v-7l-4-3v-6l4-3v-7a6 6 0 0 1 6-6z"/><rect x="20.5" y="13" width="7" height="22" rx="3.5"/></svg></div>
+          <span>01</span><h3>Smart Sensing Pad</h3><p>A familiar disposable pad containing an integrated sensing region.</p>
+        </article>
+        <article>
+          <div class="eva-component-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="11" y="11" width="26" height="26" rx="8"/><circle cx="24" cy="26.5" r="1.9"/><path d="M20.5 37v-2.5h7V37"/></svg></div>
+          <span>02</span><h3>Reusable Reader</h3><p>A detachable electronic device that captures and transfers sensor signals.</p>
+        </article>
+        <article>
+          <div class="eva-component-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="5"/><path d="M21 9.5h6M18.5 31l4-5 3.5 3 4-7M18.5 36h11"/></svg></div>
+          <span>03</span><h3>EVA Application</h3><p>A secure interface intended to organize measurements and present longitudinal trends.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="eva-gallery reveal" data-carousel>
+      <div class="eva-gallery__viewport" data-carousel-viewport tabindex="0" role="region" aria-label="EVA product views">
+        <ul class="eva-gallery__track eva-product-gallery">
+          <li class="eva-gallery-card eva-gallery-card--front" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>01</span><h3>Pad front view</h3></div>
+            <img class="eva-gallery-image eva-gallery-image--pad" src="/assets/eva/web/eva-pad.webp" width="1000" height="1280" alt="Front view of the EVA sensing pad" loading="lazy" decoding="async">
+          </li>
+          <li class="eva-gallery-card eva-gallery-card--back" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>02</span><h3>Pad rear view</h3></div>
+            <img class="eva-gallery-image eva-gallery-image--pad" src="/assets/eva/web/eva-pad-back.webp" width="1100" height="1150" alt="Rear view of the EVA sensing pad" loading="lazy" decoding="async">
+          </li>
+          <li class="eva-gallery-card eva-gallery-card--exploded eva-gallery-card--wide" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>03</span><h3>Exploded layer view</h3></div>
+            <img class="eva-gallery-image eva-gallery-image--layer" src="/assets/eva/web/sensing-layer.webp" width="1800" height="952" alt="EVA sensing-layer architecture" loading="lazy" decoding="async">
+          </li>
+          <li class="eva-gallery-card eva-gallery-card--reader eva-gallery-card--wide" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>04</span><h3>Detachable reader</h3></div>
+            <img class="eva-gallery-image" src="/assets/eva/web/logger-detach.webp" width="1200" height="1089" alt="Detachable EVA reader" loading="lazy" decoding="async">
+          </li>
+          <li class="eva-gallery-card eva-gallery-card--kit" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>05</span><h3>Starter kit</h3></div>
+            <img class="eva-gallery-image" src="/assets/eva/web/starterkit.webp" width="432" height="397" alt="EVA starter kit" loading="lazy" decoding="async">
+          </li>
+          <li class="eva-gallery-card eva-gallery-card--app" data-carousel-item>
+            <div class="eva-gallery-card__meta"><span>06</span><h3>Application interface</h3></div>
+            <img class="eva-gallery-image eva-gallery-image--application" src="/assets/eva/web/application.webp" width="913" height="1752" alt="EVA application interface" loading="lazy" decoding="async">
+          </li>
+        </ul>
+      </div>
+      <div class="page-width eva-gallery__controls">
+        <div class="carousel-dots" data-carousel-dots></div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous product view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+          <button class="carousel-btn" type="button" data-carousel-next aria-label="Next product view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="eva-development section-pad" id="development" aria-labelledby="sq-eva-development-title">
-    <div class="page-width"><div class="section-heading split-heading"><div><p class="kicker">Development</p><h2 id="sq-eva-development-title">A staged path from sensing feasibility to future launch.</h2></div><p>The sequence below describes the intended development path. Individual stage status will be published only after formal project review.</p></div><ol class="eva-roadmap" data-eva-roadmap></ol><div class="eva-development-disclaimer"><span>Important</span><p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p></div></div>
+  <section class="eva-how section" id="how-it-works" aria-labelledby="eva-how-title">
+    <div class="page-width">
+      <div class="section-head center reveal"><p class="eyebrow">How it works</p><h2 id="eva-how-title">From routine use to a longitudinal view.</h2></div>
+      <div class="pipeline pipeline--eva reveal">
+        <div class="pipeline__track" aria-hidden="true"><span class="pipeline__pulse"></span></div>
+        <ol class="pipeline__steps eva-how-grid">
+          <li class="pipeline__step" style="--n:0">
+            <div class="pipeline__node eva-how-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M18 5h12a6 6 0 0 1 6 6v7l4 3v6l-4 3v7a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6v-7l-4-3v-6l4-3v-7a6 6 0 0 1 6-6z"/><rect x="20.5" y="13" width="7" height="22" rx="3.5"/></svg></div>
+            <span class="workflow-number">01</span>
+            <h3>Use</h3><p>The pad is worn as part of the user’s normal menstrual routine.</p>
+          </li>
+          <li class="pipeline__step" style="--n:1">
+            <div class="pipeline__node eva-how-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5c5.5 6.5 9 11.3 9 15.5a9 9 0 0 1-18 0C15 16.3 18.5 11.5 24 5z"/><path d="M10 41h28M14 41v-5M20 41v-5M28 41v-5M34 41v-5"/></svg></div>
+            <span class="workflow-number">02</span>
+            <h3>Sense</h3><p>Integrated electrochemical sensors interact with menstrual fluid and generate electrical signals.</p>
+          </li>
+          <li class="pipeline__step" style="--n:2">
+            <div class="pipeline__node eva-how-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="14" width="20" height="20" rx="6"/><circle cx="17" cy="25" r="1.7"/><path d="M32 19a7 7 0 0 1 0 10M36.5 15a13 13 0 0 1 0 18"/></svg></div>
+            <span class="workflow-number">03</span>
+            <h3>Interpret</h3><p>The reusable reader and data-processing system organize and analyze the sensor response.</p>
+          </li>
+          <li class="pipeline__step" style="--n:3">
+            <div class="pipeline__node eva-how-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="5"/><path d="M18.5 31l4-5 3.5 3 4-7"/><circle cx="30" cy="22" r="1.7"/></svg></div>
+            <span class="workflow-number">04</span>
+            <h3>Understand</h3><p>The application presents longitudinal trends intended to support future health understanding and clinical research.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
   </section>
 
-  <section class="eva-partnerships section-pad" id="partnerships" aria-labelledby="sq-eva-partnership-title">
-    <div class="page-width eva-partnerships__grid"><div><p class="kicker">Partnerships</p><h2 id="sq-eva-partnership-title">Building EVA with scientific and clinical partners.</h2><p>WE-Sensing welcomes focused conversations with teams whose expertise can help shape rigorous research, product development, and responsible translation.</p><a class="button button-eva" href="/?inquiry=eva#contact">Discuss an EVA Partnership <span aria-hidden="true">↗</span></a></div><ul class="eva-partnership-list" data-eva-partnerships></ul></div>
+  <section class="eva-technology-page section" id="eva-technology" aria-labelledby="eva-technology-title">
+    <div class="page-width">
+      <div class="section-head split reveal">
+        <div><p class="eyebrow">Technology</p><h2 id="eva-technology-title">Advanced sensing, integrated into a familiar form.</h2></div>
+        <p class="section-lead">EVA extends WE-Sensing’s broader sensing platform into a women’s health application while keeping the physical product and user experience central to the system design.</p>
+      </div>
+
+      <div class="eva-tech-layout">
+        <figure class="eva-tech-architecture reveal"><img class="eva-tech-architecture__image" src="/assets/eva/web/eva-concept.webp" width="2200" height="1051" alt="EVA technology architecture from sensing interface to longitudinal interpretation" loading="lazy" decoding="async"></figure>
+        <div class="eva-tech-modules" data-stagger>
+          <article><span>01</span><div><h3>Electrochemical Sensing Interface</h3><p>Flexible sensor elements designed to respond to selected chemical changes in menstrual fluid.</p></div></article>
+          <article><span>02</span><div><h3>Integrated Fluid Interaction</h3><p>A sensing region positioned within the pad architecture to interact with collected menstrual fluid.</p></div></article>
+          <article><span>03</span><div><h3>Reusable Electronics</h3><p>A detachable reader designed to acquire signals from the disposable sensing pad.</p></div></article>
+          <article><span>04</span><div><h3>Signal Interpretation</h3><p>Data-processing methods intended to transform complex sensor responses into longitudinal measurements and interpretable trends.</p></div></article>
+        </div>
+      </div>
+
+      <ul class="eva-capabilities reveal" aria-label="Related WE-Sensing expertise"><li>Electrochemical sensing</li><li>Sensor materials</li><li>Custom electronics</li><li>Signal processing</li><li>Machine learning</li><li>Scalable fabrication</li></ul>
+    </div>
   </section>
+
+  <section class="eva-development section" id="development" aria-labelledby="eva-development-title">
+    <div class="page-width">
+      <div class="section-head split reveal">
+        <div><p class="eyebrow">Development</p><h2 id="eva-development-title">A staged path from sensing feasibility to future launch.</h2></div>
+        <p class="section-lead">The sequence below describes the intended development path. Individual stage status will be published only after formal project review.</p>
+      </div>
+      <ol class="eva-roadmap reveal" data-eva-roadmap></ol>
+      <div class="eva-development-disclaimer reveal"><span>Important</span><p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p></div>
+    </div>
+  </section>
+
+  <section class="eva-partnerships section" id="partnerships" aria-labelledby="eva-partnership-title">
+    <div class="page-width eva-partnerships__grid">
+      <div class="reveal">
+        <p class="eyebrow">Partnerships</p>
+        <h2 id="eva-partnership-title">Building EVA with scientific and clinical partners.</h2>
+        <p>WE-Sensing welcomes focused conversations with teams whose expertise can help shape rigorous research, product development, and responsible translation.</p>
+        <a class="btn btn-eva" href="/?inquiry=eva#contact">Discuss an EVA Partnership</a>
+      </div>
+      <ul class="eva-partnership-list reveal" data-eva-partnerships></ul>
+    </div>
+  </section>
+
   <aside class="eva-footer-disclaimer" aria-label="EVA development disclaimer"><div class="page-width"><span>EVA development status</span><p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p></div></aside>
 </article>

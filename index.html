@@ -2,9 +2,9 @@
 <html lang="en" data-site-root=".">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="WE-Sensing develops advanced electrochemical sensing systems that reveal how complex water environments change over time.">
-  <meta name="theme-color" content="#061A24">
+  <meta name="theme-color" content="#000000">
   <meta property="og:title" content="WE-Sensing — See What Cannot Be Seen">
   <meta property="og:description" content="Advanced electrochemical sensing systems for complex water environments.">
   <meta property="og:type" content="website">
@@ -15,24 +15,27 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://we-sensing.com/assets/og/we-sensing-social.jpg">
   <title>WE-Sensing | Electrochemical sensing for complex water</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/logos/WE-Sensing.png?v=20260802" type="image/png">
-  <link rel="shortcut icon" href="assets/logos/WE-Sensing.png?v=20260802" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logos/web/we-sensing-icon-32.png?v=20261001" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/logos/web/we-sensing-icon-192.png?v=20261001" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logos/web/we-sensing-apple-touch.png?v=20261001">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/page-extensions.css">
   <script src="scripts/team-data.js" defer></script>
   <script src="scripts/team-renderer.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="scripts/motion.js" defer></script>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header" id="site-header">
+  <header class="site-header" id="site-header" data-theme="dark">
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="WE-Sensing home">
-        <img class="brand-logo" src="assets/logos/WE-Sensing.png" alt="">
+        <img class="brand-logo" src="assets/logos/web/we-sensing.webp" width="640" height="188" alt="">
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
@@ -45,253 +48,464 @@
         <a href="#technology">Technology</a>
         <a href="./eva/" data-local-page="eva/index.html">EVA</a>
         <a href="./company/" data-local-page="company/index.html">Company</a>
-        <a class="nav-contact" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact" href="#contact">Start a conversation</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid page-width">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span>Electrochemical intelligence</span><span>Complex fluids</span></p>
-          <h1 id="hero-title">Make invisible chemistry <em>measurable.</em></h1>
-          <p class="hero-intro">WE-Sensing develops advanced electrochemical sensing systems that reveal how complex water environments change over time.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#workflow">Explore the sensing system <span aria-hidden="true">→</span></a>
-            <a class="text-link" href="#contact">Discuss a water pilot <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
+    <!-- Hero: live fluid / electrode interface -->
+    <section class="hero" id="top" aria-labelledby="hero-title" data-nav="dark" data-scene="hero">
+      <div class="hero-stage" aria-hidden="true">
+        <div class="hero-aura"><i></i><i></i><i></i></div>
+        <canvas class="hero-canvas" data-hero-canvas></canvas>
+      </div>
 
-        <div class="hero-instrument reveal" data-visual="fluid-interface" role="img" aria-label="Abstract diagram of fluid interacting with an electrochemical sensor interface">
-          <div class="instrument-meta">
-            <span>Interface view</span>
-            <span>FLUID / ELECTRODE</span>
-          </div>
-          <svg class="interface-visual" viewBox="0 0 660 620" aria-hidden="true">
-            <defs>
-              <linearGradient id="fluidFill" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="#20C9BC" stop-opacity=".1"/>
-                <stop offset="1" stop-color="#3277F5" stop-opacity=".42"/>
-              </linearGradient>
-              <filter id="softGlow"><feGaussianBlur stdDeviation="8"/></filter>
-            </defs>
-            <g class="grid-lines" opacity=".23">
-              <path d="M60 80H600M60 160H600M60 240H600M60 320H600M60 400H600M60 480H600"/>
-              <path d="M120 48V520M220 48V520M320 48V520M420 48V520M520 48V520"/>
-            </g>
-            <path class="fluid" d="M36 84c72 25 111-23 182 0s117-20 188 0 123-24 218 0v314H36Z" fill="url(#fluidFill)"/>
-            <path class="fluid-line" d="M36 84c72 25 111-23 182 0s117-20 188 0 123-24 218 0"/>
-            <g class="ions">
-              <circle cx="116" cy="152" r="5"/><circle cx="208" cy="125" r="3"/><circle cx="288" cy="184" r="6"/>
-              <circle cx="374" cy="133" r="4"/><circle cx="454" cy="204" r="5"/><circle cx="534" cy="144" r="3"/>
-              <circle cx="162" cy="248" r="4"/><circle cx="340" cy="262" r="3"/><circle cx="492" cy="294" r="6"/>
-            </g>
-            <g class="electrode">
-              <path d="M72 398H588V442H72Z"/>
-              <path d="M112 442V512M224 442V512M336 442V512M448 442V512M560 442V512"/>
-            </g>
-            <path class="signal" d="M82 548h92l18-22 24 45 30-73 28 50h45l20-16 27 16h204"/>
-            <circle class="signal-point" cx="246" cy="498" r="7"/>
-            <g class="probe-lines">
-              <path d="M116 153v215"/><path d="M288 185v183"/><path d="M454 205v163"/>
-            </g>
-          </svg>
-          <div class="instrument-footer">
+      <div class="hero-copy page-width">
+        <p class="hero-eyebrow"><span>Electrochemical intelligence</span><span>Complex fluids</span></p>
+        <h1 id="hero-title">Make invisible chemistry <em>measurable.</em></h1>
+        <p class="hero-intro">WE-Sensing develops advanced electrochemical sensing systems that reveal how complex water environments change over time.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#workflow">Explore the sensing system</a>
+          <a class="link-more link-more--light" href="#contact">Discuss a water pilot</a>
+        </div>
+      </div>
+
+      <div class="hero-hud" data-visual="fluid-interface" role="img" aria-label="Abstract diagram of fluid interacting with an electrochemical sensor interface">
+        <div class="hero-hud__meta page-wide">
+          <span>Interface view</span>
+          <span>Fluid / Electrode</span>
+        </div>
+        <div class="hero-hud__bar page-wide">
+          <span class="hero-index">01 — Sensing at the interface</span>
+          <div class="hero-hud__legend">
             <span><i class="dot dot-aqua"></i>Fluid environment</span>
             <span><i class="dot dot-blue"></i>Sensing interface</span>
-            <span class="instrument-status"><i></i>Signal active</span>
+            <span class="instrument-status"><i></i>Signal active<canvas class="hud-spark" width="96" height="22"></canvas></span>
           </div>
         </div>
       </div>
-      <div class="hero-index" aria-hidden="true">01 — SENSING AT THE INTERFACE</div>
     </section>
 
-    <section class="credibility" aria-label="Core capabilities">
-      <div class="page-width credibility-grid">
-        <p class="credibility-lead">An integrated path from chemistry to context.</p>
-        <ul>
-          <li><span>01</span>Electrochemical interfaces</li>
-          <li><span>02</span>Embedded electronics</li>
-          <li><span>03</span>Signal interpretation</li>
-          <li><span>04</span>Complex-fluid systems</li>
+    <!-- Statement + core capabilities -->
+    <section class="statement" aria-label="Core capabilities" data-nav="dark">
+      <div class="page-width">
+        <p class="statement__lead" data-words>An integrated path from <span class="hl">chemistry</span> to <span class="hl">context.</span></p>
+        <ul class="capability-row" data-stagger>
+          <li>
+            <svg class="capability-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22M5 26h22M8 6v15M14 6v15M20 6v15M26 6v15M11 26V11M17 26V11M23 26V11"/></svg>
+            <span>01</span>Electrochemical interfaces
+          </li>
+          <li>
+            <svg class="capability-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="9" width="14" height="14" rx="3"/><rect x="13" y="13" width="6" height="6" rx="1.2"/><path d="M13 4v5M19 4v5M13 23v5M19 23v5M4 13h5M4 19h5M23 13h5M23 19h5"/></svg>
+            <span>02</span>Embedded electronics
+          </li>
+          <li>
+            <svg class="capability-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 17h5l3-8 4 15 4-12 3 6h7"/></svg>
+            <span>03</span>Signal interpretation
+          </li>
+          <li>
+            <svg class="capability-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4.5 5.4 7.5 9.6 7.5 13.5a7.5 7.5 0 0 1-15 0C8.5 13.6 11.5 9.4 16 4z"/><path d="M11.5 19c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0"/></svg>
+            <span>04</span>Complex-fluid systems
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="water-section section-pad" id="water" aria-labelledby="water-title">
+    <!-- The monitoring gap: sticky scroll story -->
+    <section class="water-section section" id="water" aria-labelledby="water-title" data-nav="light">
       <div class="page-width">
-        <div class="section-heading split-heading reveal">
+        <div class="section-head split reveal">
           <div>
-            <p class="kicker">The monitoring gap</p>
+            <p class="eyebrow">The monitoring gap</p>
             <h2 id="water-title">Water chemistry does not wait for the next sample.</h2>
           </div>
-          <p>Complex water environments change continuously. A sample captures one moment; a sensing system is designed to follow the conditions around it over time.</p>
+          <p class="section-lead">Complex water environments change continuously. A sample captures one moment; a sensing system is designed to follow the conditions around it over time.</p>
         </div>
 
-        <div class="water-narrative reveal">
-          <div class="water-field" data-visual="multi-channel-water" role="img" aria-label="Abstract multi-channel water sensing visualization">
-            <div class="water-field-labels"><span>PROCESS STREAM</span><span>t →</span></div>
-            <svg viewBox="0 0 900 360" aria-hidden="true">
-              <g class="water-traces">
-                <path d="M0 68c70 0 84 23 145 23s76-44 150-44 89 62 160 62 77-30 144-30 87 48 151 48 93-57 200-57"/>
-                <path d="M0 153c58 0 91-35 154-35s73 58 137 58 94-22 157-22 76 42 143 42 111-52 209-52"/>
-                <path d="M0 244c94 0 96-37 167-37s71 68 147 68 84-48 150-48 89 36 147 36 78-21 189-21"/>
-              </g>
-              <g class="channel-markers">
-                <circle cx="145" cy="91" r="7"/><circle cx="455" cy="109" r="7"/><circle cx="700" cy="127" r="7"/>
-                <circle cx="154" cy="118" r="7"/><circle cx="448" cy="154" r="7"/><circle cx="591" cy="196" r="7"/>
-                <circle cx="167" cy="207" r="7"/><circle cx="464" cy="227" r="7"/><circle cx="611" cy="263" r="7"/>
-              </g>
-            </svg>
-            <div class="water-field-legend"><span>Channel A</span><span>Channel B</span><span>Channel C</span></div>
+        <div class="story" data-story data-active="0">
+          <div class="story__media">
+            <figure class="monitor reveal" data-visual="multi-channel-water" role="img" aria-label="Abstract multi-channel water sensing visualization">
+              <div class="monitor__bar"><span>Process stream</span><span>t →</span></div>
+              <svg class="monitor__svg" viewBox="0 0 640 400" aria-hidden="true">
+                <defs>
+                  <linearGradient id="probeBody" x1="0" x2="1">
+                    <stop offset="0" stop-color="#2b3d47"/>
+                    <stop offset=".45" stop-color="#8fa6b0"/>
+                    <stop offset="1" stop-color="#22323b"/>
+                  </linearGradient>
+                  <linearGradient id="bandFill" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#20c9bc" stop-opacity=".02"/>
+                    <stop offset=".5" stop-color="#20c9bc" stop-opacity=".16"/>
+                    <stop offset="1" stop-color="#20c9bc" stop-opacity=".02"/>
+                  </linearGradient>
+                  <filter id="monitorGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <g class="m-grid">
+                  <path d="M0 80H640M0 140H640M0 200H640M0 260H640M0 320H640"/>
+                  <path d="M80 0V400M160 0V400M240 0V400M320 0V400M400 0V400M480 0V400M560 0V400"/>
+                </g>
+
+                <!-- State 01: the sensing interface placed in the stream -->
+                <g class="m-stream">
+                  <path d="M-60 95C20 81 100 109 180 95S340 109 420 95S580 109 660 95S820 109 900 95"/>
+                  <path d="M-20 145C60 131 140 159 220 145S380 159 460 145S620 159 700 145"/>
+                  <path d="M-80 195C0 181 80 209 160 195S320 209 400 195S560 209 640 195S800 209 880 195"/>
+                  <path d="M-40 245C40 231 120 259 200 245S360 259 440 245S600 259 680 245"/>
+                  <path d="M-100 295C-20 281 60 309 140 295S300 309 380 295S540 309 620 295S780 309 860 295"/>
+                  <path d="M-60 345C20 331 100 359 180 345S340 359 420 345S580 359 660 345"/>
+                </g>
+                <g class="m-probe">
+                  <rect x="294" y="-24" width="52" height="214" rx="26" fill="url(#probeBody)"/>
+                  <rect x="302" y="160" width="36" height="22" rx="9" class="m-probe__tip"/>
+                  <path d="M312 168h16M312 175h16" class="m-probe__lines"/>
+                  <circle class="m-ripple" cx="320" cy="182" r="22"/>
+                  <circle class="m-ripple" cx="320" cy="182" r="22"/>
+                  <circle class="m-ripple" cx="320" cy="182" r="22"/>
+                </g>
+
+                <!-- State 03: interpretation band -->
+                <g class="m-interpret">
+                  <rect x="396" y="62" width="120" height="290" rx="16" fill="url(#bandFill)" class="m-band"/>
+                  <path class="m-trend" d="M24 155C120 155 120 155 216 155C312 155 312 151 408 151C432 151 432 128 456 128C480 128 480 117 504 117C560 117 560 112 616 112"/>
+                </g>
+
+                <!-- State 02: continuous channels vs discrete samples -->
+                <g class="m-traces">
+                  <path class="m-trace m-trace--a" pathLength="1" d="M24 152C48 152 48 158 72 158C96 158 96 154 120 154C144 154 144 160 168 160C192 160 192 150 216 150C240 150 240 156 264 156C288 156 288 152 312 152C336 152 336 158 360 158C384 158 384 146 408 146C432 146 432 122 456 122C480 122 480 114 504 114C528 114 528 118 552 118C576 118 576 110 600 110C608 110 608 112 616 112"/>
+                  <path class="m-trace m-trace--b" pathLength="1" d="M24 236C48 236 48 228 72 228C96 228 96 234 120 234C144 234 144 240 168 240C192 240 192 230 216 230C240 230 240 226 264 226C288 226 288 236 312 236C336 236 336 242 360 242C384 242 384 232 408 232C432 232 432 226 456 226C480 226 480 234 504 234C528 234 528 240 552 240C576 240 576 230 600 230C608 230 608 232 616 232"/>
+                  <path class="m-trace m-trace--c" pathLength="1" d="M24 308C48 308 48 316 72 316C96 316 96 312 120 312C144 312 144 304 168 304C192 304 192 314 216 314C240 314 240 320 264 320C288 320 288 310 312 310C336 310 336 304 360 304C384 304 384 312 408 312C432 312 432 318 456 318C480 318 480 308 504 308C528 308 528 302 552 302C576 302 576 312 600 312C608 312 608 310 616 310"/>
+                </g>
+                <g class="m-samples">
+                  <path class="m-sample-line" d="M120 56V352M312 56V352M504 56V352"/>
+                  <circle cx="120" cy="154" r="6.5"/><circle cx="312" cy="152" r="6.5"/><circle cx="504" cy="114" r="6.5"/>
+                  <circle cx="120" cy="234" r="6.5"/><circle cx="312" cy="236" r="6.5"/><circle cx="504" cy="234" r="6.5"/>
+                  <circle cx="120" cy="312" r="6.5"/><circle cx="312" cy="310" r="6.5"/><circle cx="504" cy="308" r="6.5"/>
+                </g>
+                <g class="m-event">
+                  <path class="m-event__stem" d="M456 112V78"/>
+                  <path class="m-event__flag" d="M456 64l9 9-9 9-9-9z"/>
+                  <circle class="m-event__ring" cx="456" cy="122" r="9"/>
+                  <circle class="m-event__dot" cx="456" cy="122" r="6" filter="url(#monitorGlow)"/>
+                </g>
+              </svg>
+              <figcaption class="monitor__legend">
+                <span>Channel A</span><span>Channel B</span><span>Channel C</span>
+                <span class="monitor__steps" aria-hidden="true"><i></i><i></i><i></i></span>
+              </figcaption>
+            </figure>
           </div>
-          <ol class="water-principles">
-            <li><span>01 / CONTEXT</span><h3>Measure where change happens.</h3><p>Bring the sensing interface closer to the fluid environment and the operating context around it.</p></li>
-            <li><span>02 / CONTINUITY</span><h3>See movement, not snapshots.</h3><p>Build a time-resolved view of how signals evolve between conventional sampling events.</p></li>
-            <li><span>03 / INTERPRETATION</span><h3>Turn response into meaning.</h3><p>Stabilize, contextualize, and present signals so technical teams can decide what to investigate next.</p></li>
+
+          <ol class="story__steps water-principles">
+            <li class="story-step" data-step="0"><span class="story-step__label">01 / Context</span><h3>Measure where change happens.</h3><p>Bring the sensing interface closer to the fluid environment and the operating context around it.</p></li>
+            <li class="story-step" data-step="1"><span class="story-step__label">02 / Continuity</span><h3>See movement, not snapshots.</h3><p>Build a time-resolved view of how signals evolve between conventional sampling events.</p></li>
+            <li class="story-step" data-step="2"><span class="story-step__label">03 / Interpretation</span><h3>Turn response into meaning.</h3><p>Stabilize, contextualize, and present signals so technical teams can decide what to investigate next.</p></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <section class="workflow-section section-pad" id="workflow" aria-labelledby="workflow-title">
+    <!-- From fluid to decision -->
+    <section class="workflow-section section" id="workflow" aria-labelledby="workflow-title" data-nav="dark">
+      <div class="workflow-glow" aria-hidden="true"></div>
       <div class="page-width">
-        <div class="section-heading on-dark reveal">
-          <p class="kicker">The WE-Sensing system</p>
+        <div class="section-head center reveal">
+          <p class="eyebrow">The WE-Sensing system</p>
           <h2 id="workflow-title">From fluid to decision.</h2>
-          <p>A coordinated sensing workflow connects the electrochemical interface with acquisition, interpretation, and a usable operational view.</p>
+          <p class="section-lead">A coordinated sensing workflow connects the electrochemical interface with acquisition, interpretation, and a usable operational view.</p>
         </div>
 
-        <ol class="workflow-grid reveal">
-          <li>
-            <span class="workflow-number">01</span>
-            <div class="workflow-icon fluid-icon" aria-hidden="true"><i></i><i></i><i></i></div>
-            <h3>Fluid</h3><p>The local environment interacts with a purpose-built electrochemical interface.</p>
-          </li>
-          <li>
-            <span class="workflow-number">02</span>
-            <div class="workflow-icon sensor-icon" aria-hidden="true"><i></i><i></i><i></i></div>
-            <h3>Sensor</h3><p>Electrode responses are acquired through integrated electronics and channel control.</p>
-          </li>
-          <li>
-            <span class="workflow-number">03</span>
-            <div class="workflow-icon data-icon" aria-hidden="true"><i></i></div>
-            <h3>Data</h3><p>Signal behavior is stabilized, organized, and interpreted in context.</p>
-          </li>
-          <li>
-            <span class="workflow-number">04</span>
-            <div class="workflow-icon decision-icon" aria-hidden="true"><i></i><i></i></div>
-            <h3>Decision</h3><p>Technical teams receive a clearer view of change and where attention may be needed.</p>
-          </li>
-        </ol>
+        <div class="pipeline reveal">
+          <div class="pipeline__track" aria-hidden="true"><span class="pipeline__pulse"></span></div>
+          <ol class="pipeline__steps workflow-grid">
+            <li class="pipeline__step" style="--n:0">
+              <div class="pipeline__node" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M5 17c3.2-2.8 6.3-2.8 9.5 0s6.3 2.8 9.5 0 6.3-2.8 9.5 0 6.3 2.8 9.5 0M5 25c3.2-2.8 6.3-2.8 9.5 0s6.3 2.8 9.5 0 6.3-2.8 9.5 0 6.3 2.8 9.5 0M5 33c3.2-2.8 6.3-2.8 9.5 0s6.3 2.8 9.5 0 6.3-2.8 9.5 0 6.3 2.8 9.5 0"/></svg>
+              </div>
+              <span class="workflow-number">01</span>
+              <h3>Fluid</h3><p>The local environment interacts with a purpose-built electrochemical interface.</p>
+            </li>
+            <li class="pipeline__step" style="--n:1">
+              <div class="pipeline__node" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="13" y="13" width="22" height="22" rx="5"/><path d="M19.5 20v8M24 20v8M28.5 20v8M19 6v7M29 6v7M19 35v7M29 35v7M6 19h7M6 29h7M35 19h7M35 29h7"/></svg>
+              </div>
+              <span class="workflow-number">02</span>
+              <h3>Sensor</h3><p>Electrode responses are acquired through integrated electronics and channel control.</p>
+            </li>
+            <li class="pipeline__step" style="--n:2">
+              <div class="pipeline__node" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M5 29h6l4-11 6 19 6-24 5 14 3-5h8"/><circle cx="21" cy="37" r="1.6"/><circle cx="27" cy="13" r="1.6"/></svg>
+              </div>
+              <span class="workflow-number">03</span>
+              <h3>Data</h3><p>Signal behavior is stabilized, organized, and interpreted in context.</p>
+            </li>
+            <li class="pipeline__step" style="--n:3">
+              <div class="pipeline__node" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M24 7l17 17-17 17L7 24z"/><path d="M17.5 24.5l4.5 4.5 8.5-9"/></svg>
+              </div>
+              <span class="workflow-number">04</span>
+              <h3>Decision</h3><p>Technical teams receive a clearer view of change and where attention may be needed.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <section class="technology-section section-pad" id="technology" aria-labelledby="technology-title">
+    <!-- Technology: exploded stack -->
+    <section class="technology-section section" id="technology" aria-labelledby="technology-title" data-nav="light">
       <div class="page-width">
-        <div class="section-heading split-heading reveal">
-          <div><p class="kicker">Integrated technology</p><h2 id="technology-title">A complete sensing stack, built from the electrode outward.</h2></div>
-          <p>Performance in complex fluids depends on more than one component. WE-Sensing develops the interface, electronics, signal layer, and application context as a connected system.</p>
+        <div class="section-head split reveal">
+          <div><p class="eyebrow">Integrated technology</p><h2 id="technology-title">A complete sensing stack, built from the electrode outward.</h2></div>
+          <p class="section-lead">Performance in complex fluids depends on more than one component. WE-Sensing develops the interface, electronics, signal layer, and application context as a connected system.</p>
         </div>
+      </div>
 
-        <div class="stack-layout reveal">
+      <div class="stack-scene" data-stack-scene data-active="0">
+        <div class="stack-scene__sticky page-width">
           <div class="stack-visual" data-visual="technology-stack" role="img" aria-label="Layered diagram of the WE-Sensing electrochemical technology stack">
-            <div class="stack-layer layer-4"><span>04</span><strong>Application layer</strong><small>Context · review · action</small></div>
-            <div class="stack-layer layer-3"><span>03</span><strong>Signal layer</strong><small>Stabilization · interpretation</small></div>
-            <div class="stack-layer layer-2"><span>02</span><strong>Electronics layer</strong><small>Acquisition · control · transfer</small></div>
-            <div class="stack-layer layer-1"><span>01</span><strong>Interface layer</strong><small>Electrode · materials · fluid</small></div>
+            <svg class="stack-svg" viewBox="0 0 600 700" aria-hidden="true">
+              <defs>
+                <linearGradient id="ifaceFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1fffc"/><stop offset="1" stop-color="#bfece6"/></linearGradient>
+                <linearGradient id="elecFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#173449"/><stop offset="1" stop-color="#0b1d2a"/></linearGradient>
+                <linearGradient id="sigFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e7eff8"/></linearGradient>
+                <linearGradient id="appFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef3fb"/></linearGradient>
+                <radialGradient id="dieGlow"><stop offset="0" stop-color="#7ff0e4"/><stop offset="1" stop-color="#20c9bc" stop-opacity=".35"/></radialGradient>
+                <filter id="stackShadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+                <filter id="stackGlow" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="9" result="blur"/><feFlood flood-color="#20c9bc" flood-opacity=".55"/><feComposite in2="blur" operator="in" result="glow"/><feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+
+              <path class="stack-axis" d="M300 160V540"/>
+
+              <!-- 01 Interface layer -->
+              <g transform="translate(0 395)">
+                <g class="stack-layer stack-layer--interface" data-layer="1">
+                  <ellipse class="stack-shadow" cx="300" cy="150" rx="215" ry="44" filter="url(#stackShadow)"/>
+                  <polygon class="side side-l" points="90,0 300,96 300,116 90,20"/>
+                  <polygon class="side side-r" points="300,96 510,0 510,20 300,116"/>
+                  <polygon class="face" points="90,0 300,-96 510,0 300,96" fill="url(#ifaceFace)"/>
+                  <g transform="matrix(1.05 -0.48 1.05 0.48 90 0)">
+                    <rect x="16" y="16" width="168" height="168" rx="18" class="iface-well"/>
+                    <path class="comb comb-a" d="M30 34H170M40 34V150M68 34V150M96 34V150M124 34V150M152 34V150"/>
+                    <path class="comb comb-b" d="M30 166H170M54 166V50M82 166V50M110 166V50M138 166V50M164 166V50"/>
+                    <g class="ions"><circle cx="60" cy="92" r="4.5"/><circle cx="118" cy="70" r="3.5"/><circle cx="150" cy="122" r="4.5"/><circle cx="88" cy="138" r="3.5"/><circle cx="132" cy="96" r="3"/><circle cx="74" cy="60" r="3"/></g>
+                  </g>
+                  <path class="veil" d="M90 0L300 -96L510 0L510 20L300 116L90 20Z"/>
+                  <g class="layer-num"><path d="M66 0H84"/><text x="60" y="5">01</text></g>
+                </g>
+              </g>
+
+              <!-- 02 Electronics layer -->
+              <g transform="translate(0 365)">
+                <g class="stack-layer stack-layer--electronics" data-layer="2">
+                  <polygon class="side side-l" points="90,0 300,96 300,116 90,20"/>
+                  <polygon class="side side-r" points="300,96 510,0 510,20 300,116"/>
+                  <polygon class="face" points="90,0 300,-96 510,0 300,96" fill="url(#elecFace)"/>
+                  <g transform="matrix(1.05 -0.48 1.05 0.48 90 0)">
+                    <path class="trace" d="M74 86H44V36M74 100H28M74 114H48V168M126 86H156V36M126 100H172M126 114H152V168M88 74V40H64M112 74V30M88 126V164M112 126V156H136"/>
+                    <g class="pads"><circle cx="44" cy="36" r="4.5"/><circle cx="28" cy="100" r="4.5"/><circle cx="48" cy="168" r="4.5"/><circle cx="156" cy="36" r="4.5"/><circle cx="172" cy="100" r="4.5"/><circle cx="152" cy="168" r="4.5"/><circle cx="64" cy="40" r="4.5"/><circle cx="112" cy="30" r="4.5"/><circle cx="88" cy="164" r="4.5"/><circle cx="136" cy="156" r="4.5"/></g>
+                    <rect x="74" y="74" width="52" height="52" rx="9" class="chip"/>
+                    <rect x="88" y="88" width="24" height="24" rx="5" fill="url(#dieGlow)"/>
+                  </g>
+                  <path class="veil" d="M90 0L300 -96L510 0L510 20L300 116L90 20Z"/>
+                  <g class="layer-num"><path d="M66 0H84"/><text x="60" y="5">02</text></g>
+                </g>
+              </g>
+
+              <!-- 03 Signal layer -->
+              <g transform="translate(0 335)">
+                <g class="stack-layer stack-layer--signal" data-layer="3">
+                  <polygon class="side side-l" points="90,0 300,96 300,116 90,20"/>
+                  <polygon class="side side-r" points="300,96 510,0 510,20 300,116"/>
+                  <polygon class="face" points="90,0 300,-96 510,0 300,96" fill="url(#sigFace)"/>
+                  <g transform="matrix(1.05 -0.48 1.05 0.48 90 0)">
+                    <path class="sig-grid" d="M20 60H180M20 100H180M20 140H180M60 20V180M100 20V180M140 20V180"/>
+                    <path class="wave wave-a" d="M22 74L40 68L58 76L76 64L94 72L112 58L130 66L148 52L166 60L180 54"/>
+                    <path class="wave wave-b" d="M22 106L40 100L58 108L76 98L94 106L112 100L130 110L148 102L166 106L180 100"/>
+                    <path class="wave wave-c" d="M22 142L40 146L58 138L76 144L94 136L112 142L130 134L148 140L166 132L180 138"/>
+                  </g>
+                  <path class="veil" d="M90 0L300 -96L510 0L510 20L300 116L90 20Z"/>
+                  <g class="layer-num"><path d="M66 0H84"/><text x="60" y="5">03</text></g>
+                </g>
+              </g>
+
+              <!-- 04 Application layer -->
+              <g transform="translate(0 305)">
+                <g class="stack-layer stack-layer--application" data-layer="4">
+                  <polygon class="side side-l" points="90,0 300,96 300,116 90,20"/>
+                  <polygon class="side side-r" points="300,96 510,0 510,20 300,116"/>
+                  <polygon class="face" points="90,0 300,-96 510,0 300,96" fill="url(#appFace)"/>
+                  <g transform="matrix(1.05 -0.48 1.05 0.48 90 0)">
+                    <rect x="26" y="26" width="148" height="22" rx="8" class="ui ui-bar"/>
+                    <rect x="26" y="58" width="70" height="58" rx="11" class="ui"/>
+                    <rect x="104" y="58" width="70" height="58" rx="11" class="ui"/>
+                    <rect x="26" y="124" width="148" height="50" rx="11" class="ui"/>
+                    <path class="ui-text" d="M36 74H72M36 86H60M114 74H150M114 86H138"/>
+                    <path class="ui-line" d="M38 162L60 152L80 158L102 142L124 148L146 134L162 138"/>
+                    <circle class="ui-dot" cx="146" cy="134" r="4.5"/>
+                  </g>
+                  <path class="veil" d="M90 0L300 -96L510 0L510 20L300 116L90 20Z"/>
+                  <g class="layer-num"><path d="M66 0H84"/><text x="60" y="5">04</text></g>
+                </g>
+              </g>
+            </svg>
           </div>
+
           <div class="stack-copy">
-            <article><span>01</span><div><h3>Electrochemical interface</h3><p>Sensing surfaces and materials are considered in relation to the fluid environment they meet.</p></div></article>
-            <article><span>02</span><div><h3>Acquisition electronics</h3><p>Integrated circuitry captures and organizes responses across one or more sensing channels.</p></div></article>
-            <article><span>03</span><div><h3>Signal interpretation</h3><p>Processing methods help distinguish stable patterns, shifts, and conditions that merit review.</p></div></article>
-            <article><span>04</span><div><h3>Decision interface</h3><p>Information is structured for the people responsible for experiments, operations, or partnerships.</p></div></article>
+            <article data-layer="1"><span>01</span><div><h3>Electrochemical interface</h3><p>Sensing surfaces and materials are considered in relation to the fluid environment they meet.</p><p class="stack-tag"><strong>Interface layer</strong> Electrode · materials · fluid</p></div></article>
+            <article data-layer="2"><span>02</span><div><h3>Acquisition electronics</h3><p>Integrated circuitry captures and organizes responses across one or more sensing channels.</p><p class="stack-tag"><strong>Electronics layer</strong> Acquisition · control · transfer</p></div></article>
+            <article data-layer="3"><span>03</span><div><h3>Signal interpretation</h3><p>Processing methods help distinguish stable patterns, shifts, and conditions that merit review.</p><p class="stack-tag"><strong>Signal layer</strong> Stabilization · interpretation</p></div></article>
+            <article data-layer="4"><span>04</span><div><h3>Decision interface</h3><p>Information is structured for the people responsible for experiments, operations, or partnerships.</p><p class="stack-tag"><strong>Application layer</strong> Context · review · action</p></div></article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="applications-section section-pad" aria-labelledby="applications-title">
+    <!-- Water applications -->
+    <section class="applications-section section" aria-labelledby="applications-title" data-nav="light">
       <div class="page-width">
-        <div class="section-heading split-heading reveal">
-          <div><p class="kicker">Water applications</p><h2 id="applications-title">Designed around demanding water environments.</h2></div>
-          <p>WE-Sensing is developing adaptable monitoring approaches for research and industrial settings where water chemistry and process context matter together.</p>
+        <div class="section-head split reveal">
+          <div><p class="eyebrow">Water applications</p><h2 id="applications-title">Designed around demanding water environments.</h2></div>
+          <p class="section-lead">WE-Sensing is developing adaptable monitoring approaches for research and industrial settings where water chemistry and process context matter together.</p>
         </div>
-        <div class="application-list reveal">
-          <article><span class="application-index">01</span><div><p class="application-label">Water &amp; wastewater</p><h3>Process monitoring</h3></div><p>Observe evolving fluid conditions within treatment and process workflows.</p><span class="application-arrow" aria-hidden="true">↗</span></article>
-          <article><span class="application-index">02</span><div><p class="application-label">Research</p><h3>Experimental systems</h3></div><p>Connect electrochemical signals with controlled studies and field-relevant questions.</p><span class="application-arrow" aria-hidden="true">↗</span></article>
-          <article><span class="application-index">03</span><div><p class="application-label">Partnerships</p><h3>Custom sensing programs</h3></div><p>Explore sensing interfaces, electronics, and data workflows around a defined measurement need.</p><span class="application-arrow" aria-hidden="true">↗</span></article>
+        <div class="application-list" data-stagger>
+          <article class="app-tile" data-spotlight>
+            <div class="app-tile__art" aria-hidden="true">
+              <svg viewBox="0 0 320 180">
+                <defs><linearGradient id="tankWater" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5fe0d4"/><stop offset="1" stop-color="#1a82c4"/></linearGradient></defs>
+                <rect class="art-line" x="26" y="40" width="74" height="104" rx="14"/>
+                <path fill="url(#tankWater)" opacity=".85" d="M27 92c12-6 24 6 36 0s24-6 36 0v38a13 13 0 0 1-13 13H40a13 13 0 0 1-13-13z"/>
+                <rect class="art-line" x="220" y="40" width="74" height="104" rx="14"/>
+                <path fill="url(#tankWater)" opacity=".85" d="M221 102c12-6 24 6 36 0s24-6 36 0v28a13 13 0 0 1-13 13h-46a13 13 0 0 1-13-13z"/>
+                <path class="art-pipe" d="M100 118H220"/>
+                <path class="art-flow" d="M104 118H216"/>
+                <path class="art-line" d="M160 104V70"/>
+                <rect class="art-chip" x="140" y="46" width="40" height="26" rx="8"/>
+                <circle class="art-sensor" cx="160" cy="118" r="11"/>
+                <circle class="art-pulse" cx="160" cy="118" r="11"/>
+                <circle class="art-pulse art-pulse--late" cx="160" cy="118" r="11"/>
+              </svg>
+            </div>
+            <span class="application-index">01</span>
+            <div><p class="application-label">Water &amp; wastewater</p><h3>Process monitoring</h3></div>
+            <p>Observe evolving fluid conditions within treatment and process workflows.</p>
+            <span class="application-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9.5 8H16v6.5"/></svg></span>
+          </article>
+          <article class="app-tile" data-spotlight>
+            <div class="app-tile__art" aria-hidden="true">
+              <svg viewBox="0 0 320 180">
+                <path fill="url(#tankWater)" opacity=".85" d="M71 102c10-5 20 5 30 0s20-5 30 0 20 5 30 0v26a14 14 0 0 1-14 14H85a14 14 0 0 1-14-14z"/>
+                <path class="art-line" d="M66 40v88a18 18 0 0 0 18 18h64a18 18 0 0 0 18-18V40M58 40h116"/>
+                <rect class="art-rod" x="96" y="22" width="10" height="100" rx="5"/>
+                <rect class="art-rod art-rod--b" x="113" y="22" width="10" height="100" rx="5"/>
+                <rect class="art-rod" x="130" y="22" width="10" height="100" rx="5"/>
+                <path class="art-wire" d="M101 22C101 6 196 6 214 40M135 22C135 12 186 14 214 52"/>
+                <rect class="art-screen" x="206" y="40" width="94" height="76" rx="12"/>
+                <path class="art-chart" d="M218 98l14-10 12 6 14-20 14 8 16-16"/>
+                <circle class="art-dot" cx="288" cy="66" r="3.5"/>
+              </svg>
+            </div>
+            <span class="application-index">02</span>
+            <div><p class="application-label">Research</p><h3>Experimental systems</h3></div>
+            <p>Connect electrochemical signals with controlled studies and field-relevant questions.</p>
+            <span class="application-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9.5 8H16v6.5"/></svg></span>
+          </article>
+          <article class="app-tile" data-spotlight>
+            <div class="app-tile__art" aria-hidden="true">
+              <svg viewBox="0 0 320 180">
+                <path class="art-link" d="M92 64H132M188 64H228M160 92V112"/>
+                <rect class="art-block" x="36" y="36" width="56" height="56" rx="16"/>
+                <path class="art-glyph" d="M50 52h28M50 76h28M55 52v18M64 76V58M73 52v18"/>
+                <rect class="art-block art-block--dark" x="132" y="36" width="56" height="56" rx="16"/>
+                <path class="art-glyph art-glyph--light" d="M150 54h20v20h-20zM155 48v6M165 48v6M155 74v6M165 74v6"/>
+                <rect class="art-block" x="228" y="36" width="56" height="56" rx="16"/>
+                <path class="art-glyph" d="M238 66h8l4-10 6 18 5-12 4 4h7"/>
+                <rect class="art-block art-block--dashed" x="112" y="112" width="96" height="48" rx="16"/>
+                <path class="art-plus" d="M160 126v20M150 136h20"/>
+              </svg>
+            </div>
+            <span class="application-index">03</span>
+            <div><p class="application-label">Partnerships</p><h3>Custom sensing programs</h3></div>
+            <p>Explore sensing interfaces, electronics, and data workflows around a defined measurement need.</p>
+            <span class="application-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9.5 8H16v6.5"/></svg></span>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="eva-section section-pad" id="eva" aria-labelledby="eva-title">
-      <div class="eva-orbit" aria-hidden="true"></div>
-      <div class="page-width eva-grid">
+    <!-- EVA preview -->
+    <section class="eva-section section" id="eva" aria-labelledby="eva-title" data-nav="light">
+      <div class="eva-section__glow" aria-hidden="true"></div>
+      <div class="page-width">
         <div class="eva-copy reveal">
-          <p class="kicker">EVA / A WE-Sensing venture</p>
+          <p class="eyebrow eyebrow--eva">EVA / A WE-Sensing venture</p>
           <h2 id="eva-title">One sensing platform. A new application in women’s health.</h2>
           <p class="eva-lead">A familiar pad. A new layer of health insight.</p>
           <p>EVA is a smart menstrual sensing pad under development, informed by shared expertise in electrochemical sensing, electronics, signal processing, and data interpretation.</p>
-          <a class="button button-eva" href="./eva/" data-local-page="eva/index.html">Explore EVA <span aria-hidden="true">→</span></a>
+          <a class="btn btn-eva" href="./eva/" data-local-page="eva/index.html">Explore EVA</a>
         </div>
 
         <div class="eva-visual reveal" data-visual="eva-architecture" role="img" aria-label="Conceptual EVA workflow showing a smart pad, reusable reader, and application">
-          <div class="eva-step eva-pad">
-            <span class="eva-step-label">01 / SENSING PAD</span>
-            <img class="eva-step__image eva-step__image--pad" src="assets/eva/eva-pad.png" alt="EVA sensing pad">
-          </div>
+          <figure class="eva-step eva-pad">
+            <div class="eva-step__stage" data-parallax="-0.06"><img class="eva-step__image eva-step__image--pad" src="assets/eva/web/eva-pad.webp" width="1000" height="1280" alt="EVA sensing pad" loading="lazy" decoding="async"></div>
+            <figcaption class="eva-step-label"><span>01</span> Sensing pad</figcaption>
+          </figure>
           <div class="eva-connector connector-one" aria-hidden="true"><span></span></div>
-          <div class="eva-step eva-reader">
-            <span class="eva-step-label">02 / READER</span>
-            <img class="eva-step__image eva-step__image--reader" src="assets/eva/eva-logger.png" alt="EVA reusable reader">
-          </div>
+          <figure class="eva-step eva-reader">
+            <div class="eva-step__stage" data-parallax="0.04"><img class="eva-step__image eva-step__image--reader" src="assets/eva/web/eva-logger.webp" width="610" height="674" alt="EVA reusable reader" loading="lazy" decoding="async"></div>
+            <figcaption class="eva-step-label"><span>02</span> Reader</figcaption>
+          </figure>
           <div class="eva-connector connector-two" aria-hidden="true"><span></span></div>
-          <div class="eva-step eva-app">
-            <span class="eva-step-label">03 / APPLICATION</span>
-            <img class="eva-step__image eva-step__image--application" src="assets/eva/application.png" alt="EVA application interface">
-          </div>
+          <figure class="eva-step eva-app">
+            <div class="eva-step__stage" data-parallax="-0.03"><img class="eva-step__image eva-step__image--application" src="assets/eva/web/application.webp" width="913" height="1752" alt="EVA application interface" loading="lazy" decoding="async"></div>
+            <figcaption class="eva-step-label"><span>03</span> Application</figcaption>
+          </figure>
         </div>
-      </div>
-      <div class="page-width eva-notice" id="eva-development">
-        <span>Development status</span>
-        <p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p>
+
+        <div class="eva-notice reveal" id="eva-development">
+          <span>Development status</span>
+          <p>EVA is currently under development and is not available for clinical diagnosis or treatment decisions.</p>
+        </div>
       </div>
     </section>
 
-    <section class="company-section section-pad" id="company" aria-labelledby="company-title">
+    <!-- Company preview -->
+    <section class="company-section section" id="company" aria-labelledby="company-title" data-nav="light">
       <div class="page-width">
-        <div class="section-heading split-heading reveal">
-          <div><p class="kicker">Company</p><h2 id="company-title">A multidisciplinary team, working from first principles.</h2></div>
-          <p>WE-Sensing brings together electrochemical sensing, environmental systems, product development, and commercialization perspectives.</p>
+        <div class="section-head split reveal">
+          <div><p class="eyebrow">Company</p><h2 id="company-title">A multidisciplinary team, working from first principles.</h2></div>
+          <p class="section-lead">WE-Sensing brings together electrochemical sensing, environmental systems, product development, and commercialization perspectives.</p>
         </div>
 
-        <div class="company-grid reveal">
-          <figure class="lab-figure">
-            <img src="assets/team/team-at-work.webp" width="1024" height="685" alt="Three WE-Sensing team members examining a sensing component in a laboratory" loading="lazy">
+        <div class="company-grid">
+          <figure class="lab-figure reveal" data-zoom>
+            <div class="lab-figure__frame">
+              <img src="assets/team/team-at-work.webp" srcset="assets/team/team-at-work.webp 1024w, assets/team/web/team-at-work-2000.webp 2000w" sizes="(min-width: 1100px) 720px, 100vw" width="1024" height="685" alt="Three WE-Sensing team members examining a sensing component in a laboratory" loading="lazy" decoding="async">
+            </div>
             <figcaption><span>Team at work</span><span>Electrochemical sensing development</span></figcaption>
           </figure>
-          <div class="team-preview-wrap">
+          <div class="team-preview-wrap reveal">
             <div class="team-preview team-preview--founders" data-team-view="preview" aria-label="WE-Sensing co-founders"></div>
             <div class="team-preview-support">
               <p>WE-Sensing’s co-founders are supported by product contributors, business mentors, and a scientific advisory board.</p>
-              <a class="button button-outline" href="./company/" data-local-page="company/index.html">Meet the complete team <span aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="./company/" data-local-page="company/index.html">Meet the complete team</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
+    <!-- Contact -->
+    <section class="contact-section section" id="contact" aria-labelledby="contact-title" data-nav="light">
       <div class="page-width contact-grid">
         <div class="contact-copy reveal">
-          <p class="kicker">Start a conversation</p>
+          <p class="eyebrow">Start a conversation</p>
           <h2 id="contact-title">Tell us what you need to measure.</h2>
           <p>Share the fluid environment, measurement question, or collaboration you have in mind. Please do not include personal medical information.</p>
-          <div class="contact-route"><span>01</span><p>Select an inquiry type</p></div>
-          <div class="contact-route"><span>02</span><p>Describe the context</p></div>
-          <div class="contact-route"><span>03</span><p>WE-Sensing will review fit and next steps</p></div>
+          <ol class="contact-routes">
+            <li class="contact-route"><span>01</span><p>Select an inquiry type</p></li>
+            <li class="contact-route"><span>02</span><p>Describe the context</p></li>
+            <li class="contact-route"><span>03</span><p>WE-Sensing will review fit and next steps</p></li>
+          </ol>
         </div>
 
         <form class="inquiry-form reveal" id="inquiry-form" action="https://formsubmit.co/ajax/xingyu@we-sensing.com" method="post" novalidate>
@@ -315,7 +529,7 @@
           <div class="form-honeypot" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
           <div class="form-footer">
             <p>Please do not share medical information.</p>
-            <button class="button button-primary" type="submit">Send inquiry <span aria-hidden="true">↗</span></button>
+            <button class="btn btn-primary" type="submit">Send inquiry</button>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
         </form>
@@ -323,12 +537,14 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-nav="light">
     <div class="page-width footer-top">
-      <a class="brand footer-brand" href="#top" aria-label="WE-Sensing home">
-        <img class="brand-logo" src="assets/logos/WE-Sensing.png" alt="">
-      </a>
-      <p>See What Cannot Be Seen.</p>
+      <div class="footer-brand-block">
+        <a class="brand footer-brand" href="#top" aria-label="WE-Sensing home">
+          <img class="brand-logo" src="assets/logos/web/we-sensing.webp" width="640" height="188" alt="" loading="lazy">
+        </a>
+        <p class="footer-slogan">See What Cannot Be Seen.</p>
+      </div>
       <nav aria-label="Footer navigation"><a href="#water">Water sensing</a><a href="#technology">Technology</a><a href="./eva/" data-local-page="eva/index.html">EVA</a><a href="./company/" data-local-page="company/index.html">Company</a><a href="#contact">Contact</a></nav>
     </div>
     <div class="page-width footer-bottom"><span>© <span id="current-year">2026</span> WE-Sensing</span><span>Electrochemical sensing systems</span><a href="#top">Back to top ↑</a></div>

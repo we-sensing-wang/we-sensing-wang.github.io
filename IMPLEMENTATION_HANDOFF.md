@@ -5,6 +5,8 @@
 **Current checkout:** `codex/premium-redesign` at `9546e07`  
 **Working-tree state at handoff:** clean
 
+**Visual redesign:** 2026-10-01 on branch `redesign/apple-style` — Apple-inspired design system, redesigned diagrams, optimized imagery. Copy, routes, data files, and the contact workflow are unchanged; sections 4, 5, and 7 describe the redesigned implementation.
+
 This document describes the website as it is currently implemented in the repository. It is the practical handoff reference for design, content, engineering, and Squarespace publishing work. Where older planning documents disagree with the code, this document identifies the difference and the code is the operational source of truth.
 
 ## 1. What has been implemented
@@ -127,32 +129,46 @@ The repository audit found that the original live surface was static/GitHub Page
 
 ### Design intent
 
-The parent site is restrained, editorial, and scientific: precise alignment, high whitespace, measured typography, technical diagrams, subtle borders, and functional animation. EVA retains this structure but uses a warmer and more human-centered expression. Avoid generic startup gradients, decorative particles, excessive cards, stock medical imagery, and unsupported scientific claims.
+The site follows Apple’s product-page conventions: large confident headlines, generous whitespace, translucent navigation, rounded surfaces, black “stage” sections for the most technical moments, and motion that explains the product. The water/parent brand uses a leaf-green → aqua → blue gradient drawn from the WE-Sensing mark; EVA uses warm whites with a rose → berry gradient drawn from the EVA mark and a plum stage for “How it works.” Avoid stock imagery, decorative effects that carry no meaning, and any diagram value that could read as a performance claim.
 
 ### Core tokens
 
-Defined at the top of `style.css`:
+Defined at the top of `style.css` (and mirrored in `styles/site.less` for Squarespace):
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `--paper` | `#F6FAFA` | Parent background |
-| `--deep` | `#061A24` | Dark sections and footer |
-| `--ink` | `#10252E` | Primary text |
-| `--muted` | `#597078` | Secondary text |
-| `--aqua` | `#20C9BC` | Primary accent |
-| `--blue` | `#3277F5` | Focus and secondary accent |
-| `--line` | `#DCE8E8` | Borders |
-| `--eva-ivory` | `#FBF5EF` | EVA background |
-| `--eva-aubergine` | `#442037` | EVA dark/accent area |
-| `--eva-coral` | `#DD725F` | EVA accent |
+| `--ink` | `#1D1D1F` | Primary text |
+| `--muted` | `#6E6E73` | Secondary text |
+| `--paper` / `--mist` | `#FFFFFF` / `#F5F5F7` | Page and alternate section backgrounds |
+| `--line` | `#D2D2D7` | Borders |
+| `--blue` | `#0A72D1` | Buttons, eyebrows, focus |
+| `--aqua` / `--aqua-bright` | `#20C9BC` / `#5FF0E0` | Signal accents on dark stages |
+| `--grad-water` | leaf green → aqua → blue | Hero “measurable.”, statement highlights |
+| `--grad-water-deep` | darker variant | Footer slogan on light backgrounds |
+| `--eva-rose` / `--eva-rose-deep` | `#E97786` / `#C4445B` | EVA accents / EVA buttons and eyebrows |
+| `--grad-eva` | rose → berry | EVA headline and lead highlights |
 
-Typography is loaded from Google Fonts:
+Typography: `-apple-system` (SF Pro) on Apple devices, Inter from Google Fonts elsewhere, and the system monospace stack for small technical labels. Body copy is 17px; display headlines are 700 weight.
 
-- `Manrope` — UI and body text
-- `Newsreader` — editorial display type
-- `DM Mono` — labels, indices, technical metadata
+Content width is `min(1200px, 100% − 2 × gutter)` with a `clamp(20px, 5vw, 48px)` gutter; the hero HUD uses a 1440px wide container.
 
-The main content width is `min(1320px, calc(100vw - 96px))`, reducing at tablet and mobile widths.
+### Motion system
+
+`scripts/motion.js` contains every scroll and canvas effect:
+
+| Effect | Markup hook | Behavior |
+| --- | --- | --- |
+| Hero fluid/electrode interface | `[data-hero-canvas]` | Particles flow over an interdigitated electrode; contacts pulse down the electrode fingers and feed the HUD sparkline. Pauses off screen and in hidden tabs; draws one still frame under reduced motion. |
+| Hero recede | `[data-scene="hero"]` | Copy rises and fades as the page scrolls. |
+| Statement highlight | `[data-words]` | Words light up as the line crosses the viewport. |
+| Monitoring story | `[data-story]` | Sticky monitor with three states driven by the visible step; plays once automatically on narrow screens. |
+| Exploded stack | `[data-stack-scene]` | Layers separate (`--e`) and highlight one by one while the scene is pinned. |
+| Expanding media | `[data-expand]` | Rounded image grows to full bleed (`--x`). |
+| Parallax / zoom | `[data-parallax]`, `[data-zoom]` | Gentle depth on product renders and photography. |
+| Carousel | `[data-carousel]` | EVA product views with dots, buttons, and arrow keys. |
+| Spotlight | `[data-spotlight]` | Pointer-following light on application tiles. |
+
+`script.js` adds the adaptive header theme (sections declare `data-nav="light|dark"`; elements with `data-adaptive-theme` follow it) and staggered reveals (`data-stagger`).
 
 ### Responsive behavior
 
@@ -160,10 +176,10 @@ The main responsive breakpoints are in `style.css` and `assets/page-extensions.c
 
 | Breakpoint | Intended behavior |
 | --- | --- |
-| `1100px` | Compresses wide layouts and moves complex grids toward a single-column composition |
-| `860px` | Activates the static mobile navigation and converts major desktop grids |
-| `600px` | Mobile type, single-column cards/flows, touch-width CTA controls, simplified EVA graphics |
-| Squarespace `800px` | Activates its mobile navigation treatment |
+| `1068px` | Two-column grids collapse; EVA roadmap becomes a vertical timeline |
+| `833px` | Mobile navigation and EVA section dropdown; pipelines turn vertical; sticky scenes become in-flow |
+| `734px` | Phone type and spacing; single-column forms and tiles |
+| Squarespace `833px` | Activates its mobile navigation treatment |
 
 Review at 1440, 1024, 768, and 390 CSS pixels after visual changes. Do not add fixed-width media that could create horizontal overflow.
 
@@ -174,8 +190,9 @@ Review at 1440, 1024, 768, and 390 CSS pixels after visual changes. Do not add f
 - Global `:focus-visible` styles use the blue accent and maintain an offset.
 - Navigation toggle controls update `aria-expanded`; Escape closes both static and Squarespace mobile menus.
 - Meaningful images have descriptive alternative text; decorative marks use empty `alt` attributes.
-- `prefers-reduced-motion: reduce` removes or minimizes reveal transitions.
-- Reveal effects use `IntersectionObserver` and degrade to immediately visible content where unsupported.
+- `prefers-reduced-motion: reduce` removes reveal transitions, stops looping animations, and shows every scroll scene in its final state.
+- Reveal effects use `IntersectionObserver` and only hide content when the inline `html.js` flag is present, so pages stay readable without JavaScript.
+- Diagrams are `role="img"` with descriptive labels; their decorative SVG internals are `aria-hidden`.
 
 ## 5. Page implementation map
 
@@ -183,33 +200,33 @@ Review at 1440, 1024, 768, and 390 CSS pixels after visual changes. Do not add f
 
 The homepage layout is, in order:
 
-1. Fixed global navigation
-2. Hero — parent-company positioning and fluid/electrode interface visualization
-3. Core capability/credibility indicators
-4. Water monitoring problem — “Water chemistry does not wait for the next sample.”
-5. Workflow — “From fluid to decision.”
-6. Technology stack — “A complete sensing stack, built from the electrode outward.”
-7. Water applications
-8. EVA preview — separate from the hero, with pad/reader/application images and a link to `/eva/`
-9. Company/team preview — only the three Co-Founders, populated by the centralized renderer
+1. Fixed translucent global navigation (dark over dark sections, light elsewhere)
+2. Hero — parent-company positioning over the live fluid/electrode canvas with its HUD labels
+3. Statement and core capabilities — “An integrated path from chemistry to context.” with four icons
+4. Water monitoring problem — sticky monitor story for Context, Continuity, and Interpretation
+5. Workflow — “From fluid to decision.” as a four-node signal pipeline
+6. Technology stack — pinned exploded isometric stack with the four layer descriptions
+7. Water applications — three illustrated tiles
+8. EVA preview — separate from the hero, with pad/reader/application renders and a link to `/eva/`
+9. Company/team preview — team photograph and the three Co-Founders, populated by the centralized renderer
 10. Contact form
-11. Footer
+11. Footer with the “See What Cannot Be Seen.” slogan
 
 The homepage is the primary visual and messaging surface. Preserve its Water and Technology content unless change scope specifically requires otherwise.
 
 ### EVA (`eva/index.html`)
 
-The EVA page has a warm ivory/aubergine/coral treatment under the shared parent system:
+The EVA page uses warm whites and rose accents under the shared parent system, following Apple’s product-page pattern:
 
-1. EVA-branded header logo and standard global navigation
-2. Hero — “A familiar pad. A new layer of health insight.”
-3. Required development disclaimer
-4. Local EVA section navigation
-5. The Need — consumer wearables, clinical testing, EVA’s intended role, and clinical-visit timeline
-6. Product Design — Smart Sensing Pad, Reusable Reader, EVA Application, plus six product visual cards
-7. How It Works — Use, Sense, Interpret, Understand
-8. Technology — four live-text modules beside the concept image
-9. Development roadmap
+1. EVA-branded header logo and standard global navigation (scrolls away)
+2. Sticky EVA local navigation (“EVA” ribbon with section links and an Explore Partnerships pill; a chevron dropdown on phones)
+3. Hero — “A familiar pad. A new layer of health insight.” and the concept render expanding to full bleed
+4. Required development disclaimer
+5. The Need — animated clinical-visit timeline, then consumer wearables, clinical testing, and EVA’s intended role
+6. Product Design — Smart Sensing Pad, Reusable Reader, EVA Application, plus a six-view product carousel
+7. How It Works — Use, Sense, Interpret, Understand as a signal pipeline on a plum stage
+8. Technology — the concept image followed by four modules and the expertise list
+9. Development roadmap (eight stages, no statuses assigned)
 10. Partnerships and CTA back to `/?inquiry=eva#contact`
 11. Required footer disclaimer and global footer
 
@@ -220,8 +237,8 @@ The local navigation, roadmap items, partnership categories, canonical URL, desc
 The Company page contains:
 
 1. Global header and navigation
-2. Intro hero with team-at-work image and index links to team groups
-3. Complete team directory, dynamically rendered from `scripts/team-data.js`
+2. Intro hero, the team-at-work photograph expanding to full bleed, and pill links to team groups
+3. Complete team directory, dynamically rendered from `scripts/team-data.js` (the Scientific Advisory Board sits on a black band)
 4. Company contact CTA
 5. Global footer
 
@@ -240,7 +257,7 @@ Do not hard-code members in the Company HTML. The team renderer owns member-card
 | Business Team | James Towey — Business Mentor; Gregory Lewis — Business Mentor |
 | Scientific Advisory Board | Katherine Burns, MD — Women’s Health and Reproductive Disease; Joel Levine, MD — Cancer Research |
 
-All nine currently reference PNG files under `assets/team/`. No biographies are displayed because approved biographies were not provided.
+All nine reference optimized WebP cut-outs under `assets/team/web/` (the PNG sources remain in `assets/team/`). No biographies are displayed because approved biographies were not provided.
 
 To update a member, edit the single member object in `scripts/team-data.js`, confirm the asset exists, and test both `/` and `/company/`.
 
@@ -262,37 +279,29 @@ Long-form EVA copy remains duplicated between `eva/index.html` and `blocks/eva-p
 
 | Area | Current assets / implementation |
 | --- | --- |
-| Parent logo | `assets/logos/WE-Sensing.png` in static header/footer and Squarespace shell |
-| EVA logo | `assets/logos/EVA.png` in the EVA static page header and product uses |
-| Homepage EVA steps | `assets/eva/eva-pad.png`, `assets/eva/eva-logger.png`, `assets/eva/application.png` |
-| EVA gallery | `eva-pad.png`, `eva-pad-back.png`, `sensing-layer.png`, `logger-detach.png`, `starterkit.png`, `application.png` |
-| EVA technology visual | `assets/eva/eva-concept.png` |
+| Parent logo | `assets/logos/web/we-sensing.webp` (from `WE-Sensing.png`) in static header/footer and Squarespace shell |
+| EVA logo | `assets/logos/web/eva.webp` (from `EVA.png`) in the EVA static page header |
+| Homepage EVA steps | `assets/eva/web/eva-pad.webp`, `eva-logger.webp`, `application.webp` |
+| EVA gallery | `assets/eva/web/` copies of `eva-pad`, `eva-pad-back`, `sensing-layer`, `logger-detach`, `starterkit`, `application` |
+| EVA technology visual | `assets/eva/web/eva-concept.webp` |
 | EVA hero / social visual | `assets/eva/eva-hero-product.webp`, `assets/eva/eva-open-graph.webp` |
 | Parent social visual | `assets/og/we-sensing-social.jpg` |
-| Team portraits | `assets/team/{lowercase-full-name}.png` |
-| Team-at-work image | `assets/team/team-at-work.webp` |
+| Team portraits | `assets/team/web/{lowercase-full-name}.webp` |
+| Team-at-work image | `assets/team/team-at-work.webp` (1024w) and `assets/team/web/team-at-work-2000.webp` (2000w, exported from `background_img1.png`) via `srcset` |
 
-Use `<img>` and `object-fit: contain` for the current EVA product PNGs. This deliberately avoids crop, distortion, and overflow.
+Every `web/` file is an optimized WebP copy of the PNG source beside it (transparency preserved); together they replace roughly 45 MB of PNG downloads with about 1 MB. The sources are kept, and the HTML `width`/`height` attributes match the WebP dimensions. `eva-concept` and `application` carry faint white halos in the source renders, so they are always staged on white surfaces. Use `<img>` and `object-fit: contain` for product renders.
 
 ### Favicon implementation
 
-Static HTML has cache-versioned PNG icon declarations:
+Square icons are cropped from the logo emblems in `assets/logos/web/`: `we-sensing-icon-32.png`, `we-sensing-icon-192.png`, `we-sensing-apple-touch.png`, and the matching `eva-*` files. Static pages declare them with `?v=20261001`; `site.region` uses the same files and keeps the existing route logic that switches to the EVA icons on `/eva/` or `/eva`.
 
-- Home: `assets/logos/WE-Sensing.png?v=20260802`
-- Company: `../assets/logos/WE-Sensing.png?v=20260802`
-- EVA: `../assets/logos/EVA.png?v=20260802`
-
-`site.region` adds WE-Sensing `icon` and `shortcut icon` links for all Squarespace pages and switches their `href` to EVA when the browser route is exactly `/eva/` or `/eva`. This runs in the document head before page rendering.
-
-The browser can cache favicons aggressively; the query string is intentional. If the logo is replaced later, update the version token in all five declarations.
-
-**Operational limitation:** the currently supplied logo PNGs are large horizontal wordmarks rather than square icon exports. They are valid favicon sources, but a purpose-made square favicon package (16, 32, 48, 180, and 192px) will display more clearly in browser tabs and installed shortcuts. Do not change the route logic when those files become available; only replace the assets/references.
+The browser can cache favicons aggressively; the query string is intentional. If the icons are replaced later, update the version token in every declaration. A designer-made favicon package is still recommended; only the files and references need to change.
 
 ### Asset documentation status
 
 - `assets/asset-registry.json` is the machine-readable registry.
 - `ASSET_REPLACEMENT_GUIDE.md` is the human replacement guide.
-- Both still contain older placeholder wording and expected `.webp` paths for several EVA visual records even though the current code uses provided PNGs. These documents should be reconciled with the table above before the next asset-production round.
+- Both still contain older placeholder wording and expected `.webp` paths for several EVA visual records, and neither lists the `web/` WebP copies or square favicons added in the October 2026 redesign. Reconcile them with the table above before the next asset-production round.
 - Do not delete older assets until every reference has been migrated and tested.
 
 ## 8. Contact form and data flow
@@ -382,7 +391,8 @@ For Squarespace, use the editor SEO fields to verify equivalent page title, desc
 | Team members / portraits | `scripts/team-data.js`, `assets/team/` | Home preview and Company directory |
 | EVA copy/layout | `eva/index.html`, `blocks/eva-page.block`, `assets/page-extensions.css` | Sync static and Squarespace versions; disclaimer |
 | EVA repeated nav/roadmap/partnerships | `scripts/eva-content.js` | Local navigation and CTA targets |
-| Static navigation and interactions | `script.js`, all static page headers/footers | Keyboard menu, route links, mobile behavior |
+| Static navigation and interactions | `script.js`, all static page headers/footers | Keyboard menu, route links, mobile behavior, header theme over dark sections |
+| Scroll effects, hero canvas, carousel | `scripts/motion.js`, matching `data-*` hooks in the HTML | Desktop and phone scroll-through, reduced motion, no console errors |
 | Squarespace global shell | `site.region`, `styles/site.less`, `scripts/site.js` | Preserve JSON-T and editable fields |
 | Squarespace navigation markup | `blocks/navigation.block` | Preserve JSON-T conditionals and editor control |
 | Contact delivery | `index.html`, `script.js`, `style.css` | Approved live send only, validation/error paths |
@@ -411,6 +421,7 @@ Before release:
    node --check scripts/team-data.js
    node --check scripts/team-renderer.js
    node --check scripts/eva-page.js
+   node --check scripts/motion.js
    node -e "JSON.parse(require('fs').readFileSync('assets/asset-registry.json','utf8'))"
    git diff --check
    ```
