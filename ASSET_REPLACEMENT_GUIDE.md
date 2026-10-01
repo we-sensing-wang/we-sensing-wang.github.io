@@ -341,7 +341,7 @@ No placeholder biographies are displayed. The centralized data format supports a
 - **Recommended dimensions:** 1200 × 630 px
 - **Recommended format:** JPEG, sRGB, under 500 KB
 - **Transparent background required:** No
-- **Alt text:** “WE-Sensing — See What Cannot Be Seen”
+- **Alt text:** “WE-Sensing — Sense What Cannot Be Seen”
 - **Replacement priority:** Medium
 - **Replacement instructions:** Review brand accuracy, replace in place, and configure the same image in Squarespace social-sharing settings
 - **Code modifications required:** No if the path remains unchanged

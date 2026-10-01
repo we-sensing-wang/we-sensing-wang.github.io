@@ -63,7 +63,7 @@
   <footer class="sq-site-footer">
     <div>
       <a class="sq-brand" href="/">{website.siteTitle}</a>
-      <p>See What Cannot Be Seen.</p>
+      <p>Sense What Cannot Be Seen.</p>
     </div>
     <div data-content-field="navigation-footerNav">
       <squarespace:navigation navigationId="footerNav" template="navigation" />

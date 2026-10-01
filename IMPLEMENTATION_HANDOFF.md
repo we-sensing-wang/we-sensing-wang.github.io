@@ -36,7 +36,7 @@ WE-Sensing (parent sensing technology company)
 ```
 
 - Do not combine water sensing and EVA in the homepage hero.
-- Preserve the corporate tagline: **“See What Cannot Be Seen.”**
+- Preserve the corporate tagline: **“Sense What Cannot Be Seen.”**
 - EVA is under development and is not presented as a clinically available product.
 - The exact EVA disclaimer must remain visible on the EVA page:
 
@@ -203,7 +203,7 @@ Review at 1440, 1024, 768, and 390 CSS pixels after visual changes. Do not add f
 The homepage layout is, in order:
 
 1. Fixed translucent global navigation (dark over dark sections, light elsewhere)
-2. Hero — the “See What Cannot Be Seen.” slogan over the live fluid/electrode canvas with its HUD labels
+2. Hero — the “Sense What Cannot Be Seen.” slogan over the live fluid/electrode canvas with its HUD labels
 3. Statement and core capabilities — “An integrated path from chemistry to context.” with four icons
 4. Water monitoring problem — sticky monitor story for Context, Continuity, and Interpretation
 5. Workflow — “From fluid to decision.” as a four-node signal pipeline
@@ -212,7 +212,7 @@ The homepage layout is, in order:
 8. EVA preview — separate from the hero, with pad/reader/application renders and a link to `/eva/`
 9. Company/team preview — team photograph and the three Co-Founders, populated by the centralized renderer
 10. Contact form
-11. Footer with the “See What Cannot Be Seen.” slogan
+11. Footer with the “Sense What Cannot Be Seen.” slogan
 
 The homepage is the primary visual and messaging surface. Preserve its Water and Technology content unless change scope specifically requires otherwise.
 
@@ -287,7 +287,7 @@ Long-form EVA copy remains duplicated between `eva/index.html` and `blocks/eva-p
 | EVA gallery | `assets/eva/web/` copies of `eva-pad`, `eva-pad-back`, `sensing-layer`, `logger-detach`, `starterkit`, `application` |
 | EVA technology visual | `assets/eva/web/eva-concept.webp` |
 | EVA hero / social visual | `assets/eva/eva-hero-product.webp` (teal elements recolored to the EVA rose palette in October 2026; the original is in Git history) and `assets/eva/eva-open-graph.webp` (still the earlier teal concept) |
-| Parent social visual | `assets/og/we-sensing-social.jpg` — tagline updated to “See What Cannot Be Seen.” (referenced with `?v=20261001` so platforms refresh their cached copy) |
+| Parent social visual | `assets/og/we-sensing-social.jpg` — tagline updated to “Sense What Cannot Be Seen.” (referenced with `?v=20261001` so platforms refresh their cached copy) |
 | Team portraits | `assets/team/web/{lowercase-full-name}.webp`; Alyssa Sharrow’s copy is defringed, and Fritz Sonnichsen’s is denoised with his shirt extended and feathered at the sides. Both use `portraitScale` in `team-data.js` so their faces match the other portraits |
 | Team-at-work image | `assets/team/team-at-work.webp` (1024w) and `assets/team/web/team-at-work-2000.webp` (2000w, exported from `background_img1.png`) via `srcset` |
 
