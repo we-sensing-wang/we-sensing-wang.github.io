@@ -96,6 +96,13 @@
   transform-origin: center bottom; transition: transform .9s var(--ease);
 }
 .team-directory .team-card:hover .team-card__portrait img { transform: scale(1.045); }
+/* Tightly cropped photos (portraitScale in team-data.js) are shown whole, bottom-anchored, and scaled
+   so faces match the other portraits; their image edges are feathered in the WebP itself. */
+.team-directory .team-card__portrait--fitted img {
+  object-fit: contain; object-position: center bottom;
+  transform: scale(var(--portrait-scale, 1)); transform-origin: 50% 100%;
+}
+.team-directory .team-card:hover .team-card__portrait--fitted img { transform: scale(calc(var(--portrait-scale, 1) * 1.045)); }
 .team-card__body { padding: 18px 20px 22px; }
 .team-directory .team-card h3 { font-size: 21px; font-weight: 600; line-height: 1.2; letter-spacing: -.022em; }
 .team-directory .team-card__role { margin-top: 4px; font-size: 15px; line-height: 1.35; }
@@ -222,8 +229,8 @@
 .eva-product-stage__legend { bottom: clamp(16px, 2.4vw, 30px); flex-wrap: wrap; gap: 8px 22px; }
 .eva-product-stage__legend span { display: inline-flex; align-items: center; gap: 8px; }
 .eva-product-stage__legend i { width: 7px; height: 7px; border-radius: 50%; background: var(--eva-rose); box-shadow: 0 0 10px rgba(233, 119, 134, .9); }
-.eva-product-stage__legend span:nth-child(2) i { background: #5fd0e0; box-shadow: 0 0 10px rgba(95, 208, 224, .9); }
-.eva-product-stage__legend span:nth-child(3) i { background: #f5d6df; box-shadow: none; }
+.eva-product-stage__legend span:nth-child(2) i { background: #f7b6c2; box-shadow: 0 0 10px rgba(247, 182, 194, .9); }
+.eva-product-stage__legend span:nth-child(3) i { background: #fff; box-shadow: none; }
 .eva-hero-disclaimer {
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 12px;
   width: fit-content; max-width: var(--page); margin: 28px auto 0; padding: 12px 22px;

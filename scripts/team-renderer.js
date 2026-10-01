@@ -20,6 +20,11 @@
       image.loading = 'lazy';
       image.decoding = 'async';
       frame.appendChild(image);
+      // Optional per-member framing for tightly cropped source photos.
+      if (member.portraitScale) {
+        frame.classList.add('team-card__portrait--fitted');
+        frame.style.setProperty('--portrait-scale', String(member.portraitScale));
+      }
     } else {
       frame.classList.add('team-card__portrait--placeholder');
       frame.setAttribute('role', 'img');

@@ -47,7 +47,10 @@
             role: 'Product Design',
             initials: 'AS',
             portrait: 'assets/team/web/alyssasharrow.webp',
-            portraitAlt: 'Alyssa Sharrow'
+            portraitAlt: 'Alyssa Sharrow',
+            // Tightly cropped source photo: show it whole and smaller so the face
+            // matches the framing of the other portraits.
+            portraitScale: 1.15
           },
           {
             id: 'fritz-sonnichsen',
@@ -55,7 +58,8 @@
             role: 'Electronics Engineering',
             initials: 'FS',
             portrait: 'assets/team/web/fritzsonnichsen.webp',
-            portraitAlt: 'Fritz Sonnichsen'
+            portraitAlt: 'Fritz Sonnichsen',
+            portraitScale: 1.1
           }
         ]
       },

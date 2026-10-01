@@ -22,7 +22,7 @@
 
     <figure class="eva-product-stage" data-expand>
       <div class="eva-product-stage__frame">
-        <img src="/assets/eva/eva-hero-product.webp" width="1823" height="863" alt="Concept render of the EVA smart sensing pad, detachable reusable reader, and application">
+        <img src="/assets/eva/eva-hero-product.webp?v=20261001" width="1823" height="863" alt="Concept render of the EVA smart sensing pad, detachable reusable reader, and application">
         <div class="eva-product-stage__label"><span>Product system</span><span>Concept view</span></div>
         <figcaption class="eva-product-stage__legend"><span><i></i>Sensing pad</span><span><i></i>Reusable electronics</span><span><i></i>Longitudinal view</span></figcaption>
       </div>

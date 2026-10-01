@@ -126,7 +126,7 @@ Squarespace template assets have a documented per-file limit; optimize final ima
 ## Adding or updating a team member
 
 1. Obtain the approved display name, role, group, portrait, and permission to publish.
-2. Keep the source portrait under `assets/team/` and export a WebP copy to `assets/team/web/` (a transparent head-and-shoulders cut-out matches the current set; the card supplies the background).
+2. Keep the source portrait under `assets/team/` and export a WebP copy to `assets/team/web/` (a transparent head-and-shoulders cut-out matches the current set; the card supplies the background). If the photo is cropped much tighter than the others, add `portraitScale` to the member (see Alyssa Sharrow and Fritz Sonnichsen): the card then shows the whole cut-out, bottom-anchored, at that scale so faces line up across the directory.
 3. Add or update one member object in `scripts/team-data.js`. Do not hard-code a second copy in a page template.
 4. Use `featured: true` only for members intentionally included in the homepage preview; the current preview is limited to the three Co-Founders.
 5. Add an approved biography only when it is verified. If none is approved, omit `biography`; the layout does not require filler copy.
@@ -169,7 +169,7 @@ For Squarespace, use the existing `contactFormBlocks` field in `site.region`:
 - Development roadmap statuses are intentionally unassigned until project leadership approves them.
 - The EVA Open Graph image is suitable for initial review but still requires brand and product-accuracy approval.
 - Square favicons (`assets/logos/web/*-icon-*.png`, `*-apple-touch.png`) are cropped from the existing logo emblems; a designer-made favicon package is still recommended.
-- The Open Graph image `assets/og/we-sensing-social.jpg` still shows the previous tagline “Make invisible chemistry measurable.”
+- The EVA Open Graph image `assets/eva/eva-open-graph.webp` still shows the earlier teal sensor-strip concept; the EVA hero render was recolored to the rose design in October 2026.
 - Partner logos must not be added without permission and verified relationship wording.
 
 ## Files and functionality that must not be removed

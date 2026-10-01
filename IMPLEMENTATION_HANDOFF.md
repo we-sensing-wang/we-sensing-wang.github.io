@@ -143,7 +143,7 @@ Defined at the top of `style.css` (and mirrored in `styles/site.less` for Square
 | `--line` | `#D2D2D7` | Borders |
 | `--blue` | `#0A72D1` | Buttons, eyebrows, focus |
 | `--aqua` / `--aqua-bright` | `#20C9BC` / `#5FF0E0` | Signal accents on dark stages |
-| `--grad-water` | leaf green → aqua → blue | Hero “measurable.”, statement highlights |
+| `--grad-water` | leaf green → aqua → blue | Hero “Cannot Be Seen.”, statement highlights |
 | `--grad-water-deep` | darker variant | Footer slogan on light backgrounds |
 | `--eva-rose` / `--eva-rose-deep` | `#E97786` / `#C4445B` | EVA accents / EVA buttons and eyebrows |
 | `--grad-eva` | rose → berry | EVA headline and lead highlights |
@@ -201,7 +201,7 @@ Review at 1440, 1024, 768, and 390 CSS pixels after visual changes. Do not add f
 The homepage layout is, in order:
 
 1. Fixed translucent global navigation (dark over dark sections, light elsewhere)
-2. Hero — parent-company positioning over the live fluid/electrode canvas with its HUD labels
+2. Hero — the “See What Cannot Be Seen.” slogan over the live fluid/electrode canvas with its HUD labels
 3. Statement and core capabilities — “An integrated path from chemistry to context.” with four icons
 4. Water monitoring problem — sticky monitor story for Context, Continuity, and Interpretation
 5. Workflow — “From fluid to decision.” as a four-node signal pipeline
@@ -284,9 +284,9 @@ Long-form EVA copy remains duplicated between `eva/index.html` and `blocks/eva-p
 | Homepage EVA steps | `assets/eva/web/eva-pad.webp`, `eva-logger.webp`, `application.webp` |
 | EVA gallery | `assets/eva/web/` copies of `eva-pad`, `eva-pad-back`, `sensing-layer`, `logger-detach`, `starterkit`, `application` |
 | EVA technology visual | `assets/eva/web/eva-concept.webp` |
-| EVA hero / social visual | `assets/eva/eva-hero-product.webp`, `assets/eva/eva-open-graph.webp` |
-| Parent social visual | `assets/og/we-sensing-social.jpg` |
-| Team portraits | `assets/team/web/{lowercase-full-name}.webp` |
+| EVA hero / social visual | `assets/eva/eva-hero-product.webp` (teal elements recolored to the EVA rose palette in October 2026; the original is in Git history) and `assets/eva/eva-open-graph.webp` (still the earlier teal concept) |
+| Parent social visual | `assets/og/we-sensing-social.jpg` — tagline updated to “See What Cannot Be Seen.” (referenced with `?v=20261001` so platforms refresh their cached copy) |
+| Team portraits | `assets/team/web/{lowercase-full-name}.webp`; Alyssa Sharrow’s copy is defringed, and Fritz Sonnichsen’s is denoised with his shirt extended and feathered at the sides. Both use `portraitScale` in `team-data.js` so their faces match the other portraits |
 | Team-at-work image | `assets/team/team-at-work.webp` (1024w) and `assets/team/web/team-at-work-2000.webp` (2000w, exported from `background_img1.png`) via `srcset` |
 
 Every `web/` file is an optimized WebP copy of the PNG source beside it (transparency preserved); together they replace roughly 45 MB of PNG downloads with about 1 MB. The sources are kept, and the HTML `width`/`height` attributes match the WebP dimensions. `eva-concept` and `application` carry faint white halos in the source renders, so they are always staged on white surfaces. Use `<img>` and `object-fit: contain` for product renders.
